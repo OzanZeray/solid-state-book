@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "arxiv-mcp-server": {
+      "command": "C:\\Users\\Ozan\\.local\\bin\\arxiv-mcp-server.exe",
+      "args": [
+        "--storage-path",
+        "C:\\Users\\Ozan\\Desktop\\PROJECTS\\Experimental data of solid state physics kitap\\arxiv-papers"
+      ]
+    },
+    "arxiv-latex-mcp": {
+      "command": "C:\\Users\\Ozan\\AppData\\Roaming\\Python\\Python314\\Scripts\\arxiv-latex-mcp.exe",
+      "args": []
+    }
+  }
+}

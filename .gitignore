@@ -1,0 +1,23 @@
+# Large binary files
+alakali kitaplar/
+arxiv-papers/
+
+# LaTeX build artifacts
+tex/*.aux
+tex/*.fdb_latexmk
+tex/*.fls
+tex/*.log
+tex/*.synctex.gz
+tex/*.toc
+tex/*.pdf
+tex/*.out
+tex/*.bbl
+tex/*.blg
+
+# Drawio
+*.drawio
+
+# System
+*.lnk
+.DS_Store
+Thumbs.db

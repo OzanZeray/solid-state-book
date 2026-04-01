@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:/Users/Ozan/.local/bin/arxiv-mcp-server.exe\" --help)",
+      "Bash(\"C:/Users/Ozan/AppData/Roaming/Python/Python314/Scripts/arxiv-latex-mcp.exe\" --help)",
+      "Bash(where xelatex:*)",
+      "Bash(where lualatex:*)",
+      "Bash(where latexmk:*)",
+      "Bash(where miktex:*)",
+      "Read(//c/Program Files/**)",
+      "mcp__473a8d44-7546-48a4-aca6-77d072dfdcd2__RUBE_MULTI_EXECUTE_TOOL"
+    ]
+  }
+}
