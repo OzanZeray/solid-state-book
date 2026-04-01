@@ -1,36 +1,212 @@
 \chapter{Crystal Structure}
 
+An ideal crystal is constructed by the infinite repetition of identical groups of atoms. A group is called the \textit{basis}. The set of mathematical points to which the basis is attached is called the \textit{lattice}. The lattice is a periodic array of points in space; the basis is what sits on each point.
+
 \section{Periodic Array of Atoms}
-% Lattice translation vectors, basis, crystal structure, primitive cell
+
+A lattice is defined by three fundamental translation vectors $\mathbf{a}_1$, $\mathbf{a}_2$, $\mathbf{a}_3$ such that any lattice point $\mathbf{R}$ can be written as
+\begin{equation}
+  \mathbf{R} = n_1 \mathbf{a}_1 + n_2 \mathbf{a}_2 + n_3 \mathbf{a}_3
+\end{equation}
+where $n_1, n_2, n_3$ are integers.
+
+The crystal structure is then given by specifying the lattice and the basis. The same lattice can describe very different crystals if the basis is changed. For example, the face-centered cubic (fcc) lattice with a one-atom basis gives copper, but with a two-atom basis it gives diamond or sodium chloride.
 
 \section{Fundamental Types of Lattices}
-% 2D lattice types, 3D lattice types (14 Bravais), index systems for crystal planes
+
+In two dimensions there are exactly 5 distinct lattice types (oblique, rectangular, centered rectangular, square, hexagonal). In three dimensions, Auguste Bravais showed in 1848 that there are exactly \textbf{14 distinct lattice types}, classified into 7 crystal systems. The experimental determination of these lattice types, particularly through X-ray diffraction, is the subject of the next chapter.
+
+Table~\ref{tab:bravais} summarizes the 7 crystal systems with their characteristic symmetry constraints.
+
+\begin{table}[H]
+\centering
+\caption{The seven crystal systems and their lattice parameter constraints.}
+\label{tab:bravais}
+\begin{tabular}{@{}llll@{}}
+\toprule
+System & Axes & Angles & Bravais Lattices \\
+\midrule
+Cubic        & $a = b = c$       & $\alpha = \beta = \gamma = 90°$    & sc, bcc, fcc \\
+Tetragonal   & $a = b \neq c$    & $\alpha = \beta = \gamma = 90°$    & simple, body-centered \\
+Orthorhombic & $a \neq b \neq c$ & $\alpha = \beta = \gamma = 90°$    & simple, base, body, face \\
+Hexagonal    & $a = b \neq c$    & $\alpha = \beta = 90°,\; \gamma = 120°$ & simple \\
+Trigonal     & $a = b = c$       & $\alpha = \beta = \gamma \neq 90°$ & simple \\
+Monoclinic   & $a \neq b \neq c$ & $\alpha = \gamma = 90° \neq \beta$ & simple, base-centered \\
+Triclinic    & $a \neq b \neq c$ & $\alpha \neq \beta \neq \gamma$    & simple \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Index System for Crystal Planes}
+
+A crystal plane is specified by three integers $(hkl)$, the Miller indices. The plane makes intercepts $a/h$, $b/k$, $c/l$ on the crystal axes. Experimentally, the Miller indices are directly observable as the indices of X-ray diffraction peaks---this was the key insight of W.~L.~Bragg in 1913~\cite{bragg1913structure}.
+
 
 \section{Simple Crystal Structures}
 
+We now examine the most common crystal structures and their experimentally determined lattice parameters. The data in Table~\ref{tab:structures} are from X-ray diffraction measurements accumulated over more than a century of crystallography.
+
+\begin{table}[H]
+\centering
+\caption{Experimentally measured lattice parameters of common crystal structures at room temperature.}
+\label{tab:structures}
+\begin{tabular}{@{}llS[table-format=1.3]l@{}}
+\toprule
+Crystal & Structure Type & {$a$ (\si{\angstrom})} & Source \\
+\midrule
+NaCl   & Rock salt (B1)      & 5.640 & X-ray diffraction \\
+KCl    & Rock salt (B1)      & 6.293 & X-ray diffraction \\
+LiF    & Rock salt (B1)      & 4.027 & X-ray diffraction \\
+MgO    & Rock salt (B1)      & 4.211 & X-ray diffraction \\
+CsCl   & Cesium chloride (B2)& 4.123 & X-ray diffraction \\
+CsBr   & Cesium chloride (B2)& 4.286 & X-ray diffraction \\
+C (diamond) & Diamond (A4)   & 3.567 & X-ray diffraction \\
+Si     & Diamond (A4)        & 5.431 & X-ray diffraction \\
+Ge     & Diamond (A4)        & 5.658 & X-ray diffraction \\
+GaAs   & Zinc blende (B3)    & 5.653 & X-ray diffraction \\
+ZnS    & Zinc blende (B3)    & 5.409 & X-ray diffraction \\
+InSb   & Zinc blende (B3)    & 6.479 & X-ray diffraction \\
+Cu     & fcc (A1)            & 3.615 & X-ray diffraction \\
+Al     & fcc (A1)            & 4.050 & X-ray diffraction \\
+Au     & fcc (A1)            & 4.078 & X-ray diffraction \\
+Fe     & bcc (A2)            & 2.867 & X-ray diffraction \\
+W      & bcc (A2)            & 3.165 & X-ray diffraction \\
+Na     & bcc (A2)            & 4.225 & X-ray diffraction \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
 \subsection{Sodium Chloride Structure}
-% Experimental: Bragg 1913 -- first XRD structure determination of NaCl
-% Data: lattice parameter, ionic radii
+
+The sodium chloride structure (Strukturbericht designation B1, space group $Fm\bar{3}m$) consists of two interpenetrating fcc lattices of Na$^+$ and Cl$^-$ ions, displaced by half a lattice parameter along each axis.
+
+This was the very first crystal structure ever determined. In 1913, W.~L.~Bragg analyzed the diffraction of X-rays from NaCl and several other alkali halides~\cite{bragg1913structure}. His father W.~H.~Bragg had constructed the X-ray spectrometer; the son W.~L.~Bragg provided the theoretical framework. Together they were awarded the 1915 Nobel Prize in Physics---W.~L.~Bragg remains the youngest Nobel laureate in physics at age 25.
+
+\paragraph{Key experimental result.} Bragg found that the X-ray diffraction pattern of NaCl could be explained by a face-centered cubic arrangement with alternating Na and Cl atoms, with a lattice constant $a = \SI{5.63}{\angstrom}$. He showed that the $(111)$ reflection was weak because the scattering from Na$^+$ and Cl$^-$ nearly cancel (they differ by only 10 electrons: 10 vs 18), while the $(200)$ reflection was strong because the two sublattices scatter in phase for this reflection.
+
+The experimental observation that certain reflections are systematically absent or weak, while others are strong, is the foundation of crystal structure determination. We will explore this quantitatively through the structure factor in Chapter~2.
+
+\begin{table}[H]
+\centering
+\caption{Lattice parameters of alkali halide crystals with the NaCl structure (\si{\angstrom}), from X-ray diffraction.}
+\label{tab:alkali_halides}
+\begin{tabular}{@{}lSSS@{}}
+\toprule
+ & {F$^-$} & {Cl$^-$} & {Br$^-$} \\
+\midrule
+Li$^+$ & 4.027 & 5.130 & 5.501 \\
+Na$^+$ & 4.620 & 5.640 & 5.977 \\
+K$^+$  & 5.347 & 6.293 & 6.600 \\
+Rb$^+$ & 5.630 & 6.581 & 6.889 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Cesium Chloride Structure}
-% Data: lattice parameter, coordination number
+
+The cesium chloride structure (B2, space group $Pm\bar{3}m$) is \textit{not} body-centered cubic, despite its visual appearance. It consists of two interpenetrating simple cubic lattices. Each Cs$^+$ ion is surrounded by 8 Cl$^-$ ions at the corners of a cube (coordination number 8), compared to 6 in the NaCl structure.
+
+CsCl, CsBr, and CsI crystallize in this structure at atmospheric pressure, with lattice constants $a = \SI{4.123}{\angstrom}$, \SI{4.286}{\angstrom}, and \SI{4.567}{\angstrom} respectively. Under high pressure, NaCl itself transforms from the B1 to the B2 structure---a fact demonstrated experimentally by X-ray diffraction in diamond anvil cells~\cite{bragg1913structure}.
+
 
 \subsection{Hexagonal Close-Packed Structure}
-% Data: c/a ratios for hcp metals
+
+The hexagonal close-packed (hcp) structure is not a Bravais lattice; it is a simple hexagonal lattice with a two-atom basis. For ideal close packing, the ratio $c/a = \sqrt{8/3} \approx 1.633$.
+
+\begin{table}[H]
+\centering
+\caption{Experimental $c/a$ ratios of hcp metals, compared to the ideal value of 1.633.}
+\label{tab:hcp}
+\begin{tabular}{@{}lSS@{}}
+\toprule
+Metal & {$a$ (\si{\angstrom})} & {$c/a$} \\
+\midrule
+Be  & 2.286 & 1.568 \\
+Mg  & 3.209 & 1.624 \\
+Ti  & 2.951 & 1.587 \\
+Zn  & 2.665 & 1.856 \\
+Cd  & 2.979 & 1.886 \\
+Co  & 2.507 & 1.623 \\
+Zr  & 3.232 & 1.593 \\
+He (hcp, \SI{0}{\kelvin})  & 3.570 & 1.633 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The deviations from ideality are significant and have physical consequences. Zinc and cadmium have $c/a$ ratios much larger than ideal, indicating that the bonding between hexagonal layers is weaker than within the layers. Beryllium and titanium are compressed along $c$, suggesting stronger interlayer bonding. Only helium at \SI{0}{\kelvin} and magnesium come close to the ideal ratio.
+
 
 \subsection{Diamond Structure}
-% Data: lattice parameter, bond lengths
+
+The diamond structure (A4, space group $Fd\bar{3}m$) is an fcc lattice with a two-atom basis: atoms at $(0,0,0)$ and $(\tfrac{1}{4},\tfrac{1}{4},\tfrac{1}{4})$. Each atom is tetrahedrally bonded to four nearest neighbors. Carbon (diamond), silicon, germanium, and $\alpha$-tin all crystallize in this structure.
+
+The bond length is $d = a\sqrt{3}/4$, giving:
+\begin{itemize}[nosep]
+  \item C (diamond): $d = \SI{1.545}{\angstrom}$
+  \item Si: $d = \SI{2.352}{\angstrom}$
+  \item Ge: $d = \SI{2.450}{\angstrom}$
+\end{itemize}
 
 \subsection{Cubic Zinc Sulfide Structure}
-% Data: lattice parameter
+
+The zinc blende (sphalerite) structure (B3, space group $F\bar{4}3m$) is identical to the diamond structure, but with two different atoms. III--V semiconductors (GaAs, InSb, GaP) and II--VI compounds (ZnS, CdTe) crystallize in this structure.
+
+The key difference from diamond: zinc blende lacks inversion symmetry. This has important consequences for piezoelectricity (Chapter~16) and nonlinear optics.
+
 
 \section{Direct Imaging of Atomic Structure}
-% Experimental: Menter 1956 -- first TEM lattice images (457 cit)
-% Experimental: Binnig & Rohrer STM -- Si(111) 7x7 reconstruction
-% Experimental: Zhang et al. 2018 -- atomic-resolution HRTEM (Science, 597 cit)
-% Experimental: Mikkelsen 2004 -- STM of GaAs nanowire (Nature Materials)
+
+\subsection{Transmission Electron Microscopy}
+
+The first direct images of a crystal lattice were obtained by J.~W.~Menter in 1956~\cite{menter1956direct}, who used transmission electron microscopy (TEM) to image the lattice fringes of platinum phthalocyanine crystals with a spacing of \SI{12}{\angstrom}. This was a landmark achievement---for the first time, the periodic arrangement of atoms in a crystal could be \textit{seen} rather than merely inferred from diffraction patterns.
+
+Modern aberration-corrected TEM can resolve individual atomic columns. Zhang et al.\ (2018)~\cite{zhang2018atomic} demonstrated atomic-resolution imaging of electron beam--sensitive crystalline materials using high-resolution TEM (HRTEM), published in \textit{Science} with 597 citations.
+
+\subsection{Scanning Tunneling Microscopy}
+
+The scanning tunneling microscope (STM), invented by Gerd Binnig and Heinrich Rohrer at IBM Z\"urich in 1981 (Nobel Prize 1986), provides real-space images of surfaces with atomic resolution. The STM measures the quantum mechanical tunneling current between a sharp metallic tip and the sample surface as the tip is scanned across the surface.
+
+The iconic STM image of solid state physics is the Si(111)-$7 \times 7$ surface reconstruction, which shows the arrangement of adatoms on the reconstructed silicon surface. This complex reconstruction, involving 49 atoms in the surface unit cell, was fully resolved by STM in the 1980s and could not have been determined by diffraction alone.
+
+The STM also enabled the direct manipulation of individual atoms on surfaces. In 1990, Don Eigler and Erhard Schweizer at IBM Almaden positioned 35 xenon atoms on a nickel surface to spell ``IBM''---a feat we will discuss in detail in Chapter~18~\cite{eigler1991switch}.
+
 
 \section{Crystal Structure Data}
-% Table: lattice parameters for NaCl, CsCl, diamond, ZnS, hcp structures
-% Source: Singh 2009, NIST NSRDS-NBS 41 (Rao & Natarajan 1972)
-% Table: Shannon ionic radii
+
+\subsection{Ionic Crystal Radii}
+
+The concept of ionic radius is central to understanding crystal structures. R.~D.~Shannon compiled the most widely used set of effective ionic radii in 1976, based on a critical evaluation of over 1000 interatomic distances from X-ray and neutron diffraction studies.
+
+\begin{table}[H]
+\centering
+\caption{Shannon effective ionic radii (\si{\angstrom}) for common ions in octahedral coordination (coordination number VI).}
+\label{tab:shannon}
+\begin{tabular}{@{}lSlS@{}}
+\toprule
+Ion & {Radius (\si{\angstrom})} & Ion & {Radius (\si{\angstrom})} \\
+\midrule
+Li$^+$  & 0.76 & F$^-$   & 1.33 \\
+Na$^+$  & 1.02 & Cl$^-$  & 1.81 \\
+K$^+$   & 1.38 & Br$^-$  & 1.96 \\
+Rb$^+$  & 1.52 & I$^-$   & 2.20 \\
+Cs$^+$  & 1.67 & O$^{2-}$  & 1.40 \\
+Mg$^{2+}$ & 0.72 & S$^{2-}$  & 1.84 \\
+Ca$^{2+}$ & 1.00 & Se$^{2-}$ & 1.98 \\
+Sr$^{2+}$ & 1.18 & Te$^{2-}$ & 2.21 \\
+Ba$^{2+}$ & 1.35 & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The radius ratio $r_+/r_-$ governs which structure type is stable:
+\begin{itemize}[nosep]
+  \item $r_+/r_- > 0.732$: CsCl structure (coordination 8)
+  \item $0.414 < r_+/r_- < 0.732$: NaCl structure (coordination 6)
+  \item $0.225 < r_+/r_- < 0.414$: zinc blende structure (coordination 4)
+\end{itemize}
+For NaCl, the ratio is $r_{\text{Na}^+}/r_{\text{Cl}^-} = 1.02/1.81 = 0.56$, which falls squarely in the NaCl structure stability range.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The experimental techniques for determining these crystal structures---X-ray, neutron, and electron diffraction---are the subject of the next chapter.}
