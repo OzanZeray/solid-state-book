@@ -1,45 +1,146 @@
 \chapter{Superconductivity}
 
+In 1911, Heike Kamerlingh Onnes discovered that the electrical resistance of mercury drops abruptly to zero below \SI{4.2}{\kelvin}. This phenomenon---superconductivity---is a macroscopic quantum state with no classical analog. This chapter presents the experimental milestones that established our understanding of superconductivity, from the original discovery to high-temperature superconductors.
+
 \section{Experimental Survey}
 
-\subsection{Discovery of Superconductivity}
-% Experimental: Onnes 1911 -- mercury R vs T
-% Experimental: Van Delft \& Kes 2010 (618 cit) -- historic plot reproduction
+\subsection{The Discovery (Onnes, 1911)}
 
-\subsection{Meissner Effect}
-% Experimental: Geim et al. 1998 (Nature, 352 cit) -- flux expulsion
+Kamerlingh Onnes, working at the Cryogenic Laboratory in Leiden, had recently succeeded in liquefying helium (1908). In April 1911, he measured the resistance of a mercury wire as it was cooled through \SI{4.2}{\kelvin}. His notebook records: ``\textit{Mercury practically zero}''~\cite{vandelft2010discovery}.
+
+The transition is sharp: the resistance drops by at least a factor of $10^{10}$ within a temperature interval of $\sim$\SI{0.01}{\kelvin}. A persistent current induced in a superconducting ring shows no measurable decay over years---the most sensitive bound gives a resistivity $< \SI{e-25}{\ohm\centi\metre}$.
+
+\subsection{Occurrence of Superconductivity}
+
+\begin{table}[H]
+\centering
+\caption{Superconducting transition temperatures $T_c$ of selected elements (\si{\kelvin}).}
+\label{tab:tc_elements}
+\begin{tabular}{@{}lSlSlS@{}}
+\toprule
+Element & {$T_c$} & Element & {$T_c$} & Element & {$T_c$} \\
+\midrule
+Al & 1.18 & In & 3.41 & Pb & 7.20 \\
+Cd & 0.52 & La & 6.00 & Sn & 3.72 \\
+Ga & 1.08 & Hg & 4.15 & V  & 5.40 \\
+Hf & 0.13 & Mo & 0.92 & Zn & 0.85 \\
+Nb & 9.25 & Os & 0.66 & Zr & 0.61 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Niobium has the highest $T_c$ among elements (\SI{9.25}{\kelvin}). The noble metals (Cu, Ag, Au), the alkali metals, and the ferromagnetic metals (Fe, Co, Ni) are \textit{not} superconducting.
+
+\subsection{Meissner Effect (1933)}
+
+Meissner and Ochsenfeld discovered that a superconductor is not merely a perfect conductor---it is a perfect \textit{diamagnet}. When cooled below $T_c$ in an applied magnetic field, the field is \textit{expelled} from the interior ($\mathbf{B} = 0$ inside). This distinguishes a superconductor from a merely perfect conductor, which would trap any field present when it became perfectly conducting.
 
 \subsection{Heat Capacity}
-% Experimental: Meservey \& Schwartz (65 cit) -- specific heat jump at Tc (Al, Sn)
+
+The electronic specific heat of a superconductor shows a discontinuous jump at $T_c$ and then decreases exponentially:
+\begin{equation}
+  C_{\text{es}} \propto \exp\left(-\frac{\Delta(0)}{k_B T}\right) \quad (T < T_c)
+\end{equation}
+This exponential behavior is direct evidence for an energy gap $2\Delta$ in the electronic excitation spectrum. Meservey and Schwartz compiled detailed comparisons of the specific heat jump in Al and Sn with BCS theory predictions, finding excellent agreement.
 
 \subsection{Energy Gap}
-% Experimental: Giaever Nobel 1974 (229 cit) -- Al-Al2O3-Pb tunneling
-% Data: BCS gap ratio 2Delta/kTc table
+
+\paragraph{Giaever tunneling (1960).} Ivar Giaever~\cite{giaever1974nobel} measured the current--voltage characteristic of an Al/Al$_2$O$_3$/Pb tunnel junction. Below $T_c$, no current flows until the voltage exceeds $\Delta_{\text{Al}} + \Delta_{\text{Pb}}$---direct evidence for the energy gap. Giaever received the 1973 Nobel Prize for this work.
+
+\begin{table}[H]
+\centering
+\caption{BCS energy gap $2\Delta(0)$ and the ratio $2\Delta(0)/k_BT_c$ for selected superconductors. BCS weak-coupling prediction: $2\Delta(0)/k_BT_c = 3.528$.}
+\label{tab:bcs_gap}
+\begin{tabular}{@{}lSSS@{}}
+\toprule
+Element & {$T_c$ (\si{\kelvin})} & {$2\Delta(0)$ (\si{\milli\electronvolt})} & {$2\Delta(0)/k_BT_c$} \\
+\midrule
+Al & 1.18 & 0.36  & 3.53 \\
+Sn & 3.72 & 1.15  & 3.59 \\
+In & 3.41 & 1.05  & 3.57 \\
+Pb & 7.20 & 2.73  & 4.40 \\
+Hg & 4.15 & 1.66  & 4.64 \\
+Nb & 9.25 & 3.05  & 3.82 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Al, Sn, and In are weak-coupling superconductors (ratio $\approx 3.5$). Pb and Hg are strong-coupling superconductors (ratio $> 4$), where the electron--phonon interaction is especially strong.
 
 \subsection{Isotope Effect}
-% Experimental: Kishore 1999 -- isotope coefficient table
 
-\section{Theoretical Survey}
-% London equation, coherence length, BCS theory (brief)
+The isotope effect---$T_c \propto M^{-\alpha}$ where $M$ is the isotopic mass---provided the crucial clue that phonons mediate the superconducting pairing:
+\begin{equation}
+  T_c \propto M^{-1/2} \quad (\text{BCS prediction: } \alpha = 0.5)
+\end{equation}
+
+Maxwell (1950) and Reynolds et al.\ (1950) independently discovered the isotope effect in mercury. Experimental values of $\alpha$ for several elements: Zn (0.45), Sn (0.47), Hg (0.50), Pb (0.48)---in good agreement with the BCS prediction.
+
 
 \section{Flux Quantization}
-% Experimental: Deaver \& Fairbank 1961 -- h/2e in superconducting ring
+
+Deaver and Fairbank (1961) demonstrated that the magnetic flux through a superconducting ring is quantized in units of:
+\begin{equation}
+  \Phi_0 = \frac{h}{2e} = \SI{2.068e-15}{\weber}
+\end{equation}
+
+The factor of 2 in the denominator (not $h/e$) was a landmark confirmation that the superconducting carriers are \textit{pairs} of electrons (Cooper pairs).
+
 
 \section{Type II Superconductors}
 
-\subsection{Vortex State}
-% Experimental: Abrikosov Nobel 2004 (382 cit) -- vortex lattice theory + Essmann-Trauble image
-% Experimental: Vinnikov et al. 2019 -- modern Bitter decoration of Abrikosov vortices
+In Type II superconductors ($\kappa = \lambda/\xi > 1/\sqrt{2}$), there is a mixed state between lower ($H_{c1}$) and upper ($H_{c2}$) critical fields, where quantized vortices (each carrying flux $\Phi_0$) penetrate the material.
+
+Abrikosov~\cite{abrikosov2004nobel} predicted the vortex lattice in 1957. Essmann and Tr\"auble (1967) provided the first direct images using Bitter decoration---magnetic particles that accumulate at the vortex cores.
+
 
 \section{Josephson Effect}
 
-\subsection{DC and AC Josephson Effect}
-% Experimental: Shapiro 1963 (1595 cit) -- Shapiro steps, microwave effects
+\subsection{DC Josephson Effect}
 
-\subsection{Macroscopic Quantum Interference}
-% SQUID operation
+Brian Josephson (1962) predicted that a supercurrent can flow through a thin insulating barrier between two superconductors, even at zero voltage:
+\begin{equation}
+  I = I_c \sin\phi
+\end{equation}
+where $\phi$ is the phase difference between the two superconductors and $I_c$ is the critical current.
+
+\subsection{AC Josephson Effect and Shapiro Steps}
+
+When a dc voltage $V$ is applied across the junction, the phase evolves as $d\phi/dt = 2eV/\hbar$, producing an ac supercurrent at frequency $\omega = 2eV/\hbar$.
+
+Shapiro (1963)~\cite{shapiro1963josephson} observed that when microwaves of frequency $f$ are applied to the junction, the I--V curve shows quantized voltage steps at:
+\begin{equation}
+  V_n = n\frac{hf}{2e}, \quad n = 0, \pm 1, \pm 2, \ldots
+\end{equation}
+
+These Shapiro steps provide the most precise voltage standard in metrology, linking voltage to frequency through fundamental constants.
+
 
 \section{High-Temperature Superconductors}
-% Experimental: Bednorz \& Mueller Nobel 1988 (988 cit) -- La-Ba-Cu-O discovery
-% Experimental: Mueller \& Bednorz 1987 (Science, 286 cit) -- high-Tc class overview
-% Data: Tc table for elements, A15 compounds, cuprates
+
+In 1986, J.~Georg Bednorz and K.~Alex M\"uller~\cite{bednorz1988nobel} discovered superconductivity at \SI{35}{\kelvin} in the layered copper oxide La$_{2-x}$Ba$_x$CuO$_4$---far above the previous record of \SI{23}{\kelvin} (Nb$_3$Ge). Within a year, Wu et al.\ (1987) found $T_c = \SI{93}{\kelvin}$ in YBa$_2$Cu$_3$O$_{7-\delta}$ (YBCO)---above the boiling point of liquid nitrogen (\SI{77}{\kelvin}).
+
+\begin{table}[H]
+\centering
+\caption{Selected high-$T_c$ superconductors.}
+\label{tab:htsc}
+\begin{tabular}{@{}lSl@{}}
+\toprule
+Compound & {$T_c$ (\si{\kelvin})} & Year discovered \\
+\midrule
+La$_{2-x}$Ba$_x$CuO$_4$ & 35 & 1986 (Bednorz--M\"uller) \\
+YBa$_2$Cu$_3$O$_7$ & 93 & 1987 (Wu et al.) \\
+Bi$_2$Sr$_2$Ca$_2$Cu$_3$O$_{10}$ & 110 & 1988 \\
+Tl$_2$Ba$_2$Ca$_2$Cu$_3$O$_{10}$ & 125 & 1988 \\
+HgBa$_2$Ca$_2$Cu$_3$O$_8$ & 133 & 1993 \\
+H$_3$S (at \SI{155}{\giga\pascal}) & 203 & 2015 \\
+LaH$_{10}$ (at \SI{170}{\giga\pascal}) & 250 & 2019 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The mechanism of high-$T_c$ superconductivity remains one of the great open problems in physics. What is experimentally established is that the CuO$_2$ planes are essential, that the gap symmetry is $d$-wave (not $s$-wave), and that the normal state above $T_c$ is anomalous (``strange metal'').
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{We now leave the world of perfect conductors and turn to the magnetic properties of solids.}

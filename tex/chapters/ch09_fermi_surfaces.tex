@@ -1,16 +1,74 @@
 \chapter{Fermi Surfaces and Metals}
 
-\section{Zone Schemes and Fermi Surface Construction}
-% Reduced zone, periodic zone, nearly free electrons
+The Fermi surface is the surface in $\mathbf{k}$-space that separates occupied from unoccupied electron states at $T = 0$. Its shape determines the electronic, thermal, and magnetic properties of metals. In this chapter we present the experimental techniques and data that reveal Fermi surface geometry.
+
+\section{Construction of Fermi Surfaces}
+
+For a free electron gas, the Fermi surface is a sphere of radius $k_F = (3\pi^2 n)^{1/3}$. In real metals, the periodic potential distorts this sphere, especially near Brillouin zone boundaries where band gaps open. The resulting Fermi surface can be remarkably complex.
 
 \section{The de Haas--van Alphen Effect}
-% Experimental: Shoenberg 1962 (362 cit) -- dHvA in Cu, Ag, Au
-% Data: belly and neck orbit frequencies, oscillation periods
 
-\section{The Fermi Surface of Copper}
-% Experimental: Pippard 1957 (279 cit) -- anomalous skin effect determination
-% Data: Cu Fermi surface shape -- belly, neck, and dog's bone orbits
+The most powerful experimental probe of Fermi surface geometry is the \textbf{de Haas--van Alphen (dHvA) effect}: the oscillation of the magnetic susceptibility (or magnetization) of a metal as a function of $1/B$ at low temperatures.
 
-\section{Calculation of Energy Bands}
-% Tight binding, Wigner-Seitz, pseudopotential methods
-% Comparison with experimental Fermi surface
+The Onsager relation connects the oscillation period to the extremal cross-sectional area $A$ of the Fermi surface perpendicular to $\mathbf{B}$:
+\begin{equation}
+  \Delta\left(\frac{1}{B}\right) = \frac{2\pi e}{\hbar A}
+\end{equation}
+
+By rotating the crystal and measuring the oscillation frequency as a function of field direction, the entire Fermi surface can be mapped out.
+
+\subsection{Fermi Surface of Copper}
+
+Copper is the most thoroughly studied metal in Fermi surface physics. Two landmark experiments established its Fermi surface topology:
+
+\paragraph{Pippard (1957).} A.~B.~Pippard~\cite{pippard1957fermi} used the \textbf{anomalous skin effect}---the frequency-dependent surface resistance of a metal---to determine the Fermi surface shape of copper. By measuring the surface impedance as a function of crystallographic orientation, he showed that the Cu Fermi surface is a sphere with ``necks'' protruding toward the $L$ points of the Brillouin zone. This was the first experimental determination of a Fermi surface shape in any metal.
+
+\paragraph{Shoenberg (1962).} D.~Shoenberg~\cite{shoenberg1962dhva} performed comprehensive dHvA measurements on Cu, Ag, and Au single crystals, identifying two principal oscillation frequencies:
+
+\begin{table}[H]
+\centering
+\caption{De Haas--van Alphen frequencies for copper. ``Belly'' corresponds to the large central cross-section; ``neck'' to the small cross-section at the $L$-point contact with the zone boundary. Data from Shoenberg (1962).}
+\label{tab:dhva_cu}
+\begin{tabular}{@{}lSS@{}}
+\toprule
+Orbit & {Frequency ($10^8$ \si{\gauss})} & {$A/A_{\text{free}}$} \\
+\midrule
+Belly $\langle 111 \rangle$   & 5.90 & 1.00 \\
+Belly $\langle 100 \rangle$   & 5.98 & 1.01 \\
+Belly $\langle 110 \rangle$   & 5.88 & 1.00 \\
+Neck $\langle 111 \rangle$    & 0.22 & 0.037 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The belly frequency is nearly isotropic and close to the free-electron value (ratio $\approx 1.00$), confirming that most of the Cu Fermi surface is indeed nearly spherical. The neck frequency is much smaller ($\sim$4\% of belly), corresponding to the narrow tubes connecting the sphere to the zone boundary at the 8 $L$-points.
+
+This topology---a sphere with 8 necks---is one of the most iconic images in solid state physics. It explains:
+\begin{itemize}[nosep]
+  \item Why Cu is an excellent electrical conductor (large, nearly spherical Fermi surface with high velocity).
+  \item Why the optical properties of Cu change abruptly at $\sim$\SI{2}{\electronvolt} (interband transitions from $d$-band to states above $E_F$, giving Cu its characteristic color).
+  \item The anomalous positive Hall coefficient observed in some orientations (due to open orbits on the multiply-connected Fermi surface).
+\end{itemize}
+
+\section{Experimental Methods Summary}
+
+\begin{table}[H]
+\centering
+\caption{Experimental methods for Fermi surface studies.}
+\label{tab:fs_methods}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Method & What it measures & Resolution \\
+\midrule
+de Haas--van Alphen  & Extremal cross-section areas & Very high \\
+Anomalous skin effect & Fermi surface shape & Moderate \\
+ARPES                & $E(\mathbf{k})$ directly & $\sim$\SI{1}{\milli\electronvolt} \\
+Positron annihilation & Momentum distribution & Moderate \\
+Compton scattering   & Electron momentum density & Low \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{We now turn to superconductivity---a macroscopic quantum phenomenon that was one of the great surprises of condensed matter physics.}

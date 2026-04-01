@@ -1,30 +1,131 @@
 \chapter{Semiconductor Crystals}
 
+Semiconductors are the foundation of modern electronics. Their properties---tunable band gap, controllable carrier concentration through doping, and high carrier mobility---have enabled the transistor, the integrated circuit, the laser, and the solar cell. In this chapter we present the experimental data that characterize the intrinsic and extrinsic properties of semiconductor crystals.
+
 \section{Band Gap}
-% Experimental: Passler 1999 -- Eg(T) data and Varshni fits
-% Data: band gap table for Si, Ge, GaAs, InSb at 0K and 300K
+
+The band gap data presented in Chapter~7 (Table~\ref{tab:bandgap}) show that semiconductor gaps range from \SI{0.235}{\electronvolt} (InSb) to \SI{2.338}{\electronvolt} (GaP). The distinction between ``direct'' and ``indirect'' gap is crucial for optical properties: in a direct-gap semiconductor, the minimum of the conduction band and the maximum of the valence band occur at the same $\mathbf{k}$-point, allowing efficient photon emission.
 
 \section{Effective Mass}
 
 \subsection{Cyclotron Resonance}
-% Experimental: Dresselhaus, Kip, Kittel 1955 (1616 cit) -- Si and Ge effective masses
-% Experimental: Dresselhaus, Kip, Kittel 1953 (184 cit) -- first observation in Ge
-% Data: effective mass table (electrons and holes) for Si, Ge, GaAs, InSb
+
+The most direct experimental measurement of effective mass is \textbf{cyclotron resonance}: when a semiconductor is placed in a magnetic field $B$, carriers undergo circular orbits at the cyclotron frequency:
+\begin{equation}
+  \omega_c = \frac{eB}{m^*}
+\end{equation}
+By sweeping the microwave frequency (or the magnetic field) and observing resonant absorption, $m^*$ is directly determined.
+
+Dresselhaus, Kip, and Kittel (1953, 1955)~\cite{dresselhaus1955cyclotron} performed the definitive cyclotron resonance experiments on silicon and germanium at \SI{4}{\kelvin} using \SI{24}{\giga\hertz} microwaves. Their results revealed the complex structure of the valence band (heavy holes, light holes, split-off band) and the anisotropic electron effective mass.
+
+\begin{table}[H]
+\centering
+\caption{Experimental effective masses in units of $m_e$, from cyclotron resonance. Data from Dresselhaus, Kip, and Kittel (1955).}
+\label{tab:effmass}
+\begin{tabular}{@{}lSSSSS@{}}
+\toprule
+ & \multicolumn{2}{c}{Electrons} & \multicolumn{2}{c}{Holes} & \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Material & {$m_l^*/m_e$} & {$m_t^*/m_e$} & {$m_{hh}^*/m_e$} & {$m_{lh}^*/m_e$} & {$E_g$ (\si{\electronvolt})} \\
+\midrule
+Si  & 0.98 & 0.19 & 0.49 & 0.16 & 1.12 \\
+Ge  & 1.64 & 0.08 & 0.33 & 0.04 & 0.66 \\
+GaAs & {0.067} & {--} & 0.45 & 0.082 & 1.42 \\
+InSb & {0.014} & {--} & 0.40 & 0.016 & 0.24 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In Si and Ge, the conduction band minima are ellipsoidal, with different longitudinal ($m_l^*$) and transverse ($m_t^*$) masses. In GaAs and InSb (direct gap at $\Gamma$), the electron mass is isotropic and very small---InSb's electron mass of $0.014\,m_e$ is one of the smallest known.
+
 
 \section{Intrinsic Carrier Concentration}
-% Data: n_i vs T for Si and Ge
-% Intrinsic mobility
+
+In a pure (intrinsic) semiconductor, the carrier concentration at temperature $T$ is:
+\begin{equation}
+  n_i = \sqrt{N_c N_v}\, \exp\left(-\frac{E_g}{2k_BT}\right)
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Intrinsic carrier concentrations at \SI{300}{\kelvin}.}
+\label{tab:intrinsic}
+\begin{tabular}{@{}lSS@{}}
+\toprule
+Material & {$n_i$ (\si{\per\centi\metre\cubed})} & {$E_g$ (\si{\electronvolt})} \\
+\midrule
+Si   & 1.0e10  & 1.12 \\
+Ge   & 2.4e13  & 0.66 \\
+GaAs & 1.8e6   & 1.42 \\
+InSb & 1.6e16  & 0.24 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The exponential dependence on $E_g/k_BT$ spans 10 orders of magnitude across these four materials at room temperature.
+
 
 \section{Impurity Conductivity}
 
-\subsection{Donor and Acceptor States}
-% Experimental: Dean et al. 1967 (489 cit) -- ionization energies of B, P in Si/Ge
-% Data: ionization energy table for common donors/acceptors
+\subsection{Donor and Acceptor Ionization Energies}
 
-\subsection{Carrier Concentration and Mobility}
-% Experimental: Li \& Thurber 1977 (394 cit) -- electron mobility vs T in P-doped Si
-% Experimental: Fischetti 1991 (147 cit) -- electron-plasmon effect on mobility
-% Data: mobility vs T showing phonon and impurity scattering regimes
+When a Group V atom (P, As, Sb) substitutes for Si, the extra electron is weakly bound in a hydrogen-like orbit around the impurity. The ionization energy is:
+\begin{equation}
+  E_d = \frac{m^*}{m_e} \frac{1}{\kappa^2} \times \SI{13.6}{\electronvolt}
+\end{equation}
+where $\kappa$ is the dielectric constant. For Si ($\kappa = 11.7$, $m^* \approx 0.2\,m_e$): $E_d \approx \SI{20}{\milli\electronvolt}$.
 
-\section{Thermoelectric Effects}
-% Seebeck coefficient data
+\begin{table}[H]
+\centering
+\caption{Experimental ionization energies of donors and acceptors in Si and Ge (\si{\milli\electronvolt}). Data from Dean et al.\ (1967).}
+\label{tab:ionization}
+\begin{tabular}{@{}llSS@{}}
+\toprule
+Type & Impurity & {In Si (\si{\milli\electronvolt})} & {In Ge (\si{\milli\electronvolt})} \\
+\midrule
+Donor    & P  & 45  & 12.0 \\
+Donor    & As & 54  & 12.7 \\
+Donor    & Sb & 39  & 9.6 \\
+Acceptor & B  & 45  & 10.4 \\
+Acceptor & Al & 67  & 10.2 \\
+Acceptor & Ga & 72  & 10.8 \\
+Acceptor & In & 160 & 11.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The shallow donors and acceptors in Ge (ionization energies $\sim$\SI{10}{\milli\electronvolt}) are nearly identical, reflecting the hydrogen-like nature of the impurity states. In Si, the ionization energies are larger ($\sim$\SI{45}{\milli\electronvolt}) and show more chemical variation.
+
+
+\section{Carrier Mobility}
+
+The electron mobility in semiconductors is limited by lattice (phonon) scattering at high temperatures and by ionized impurity scattering at low temperatures:
+\begin{equation}
+  \mu \propto T^{-3/2} \quad (\text{phonon}), \qquad \mu \propto T^{+3/2} \quad (\text{impurity})
+\end{equation}
+
+Li and Thurber (1977) measured the electron mobility and resistivity in phosphorus-doped silicon as a function of temperature and dopant concentration, providing the standard reference data used in device design:
+
+\begin{table}[H]
+\centering
+\caption{Electron mobility in Si at \SI{300}{\kelvin} as a function of P doping. Data from Li \& Thurber (1977).}
+\label{tab:mobility}
+\begin{tabular}{@{}SS@{}}
+\toprule
+{$N_D$ (\si{\per\centi\metre\cubed})} & {$\mu_e$ (\si{\centi\metre\squared\per\volt\per\second})} \\
+\midrule
+1e14 & 1450 \\
+1e15 & 1350 \\
+1e16 & 1200 \\
+1e17 &  750 \\
+1e18 &  280 \\
+1e19 &  110 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At low doping, $\mu_e \approx \SI{1450}{\centi\metre\squared\per\volt\per\second}$ (limited by phonon scattering). As doping increases, ionized impurity scattering dominates and the mobility drops by an order of magnitude.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{Having explored semiconductors, we now turn to the Fermi surfaces of metals---the experimental window into the electronic structure of real metallic crystals.}
