@@ -23,8 +23,15 @@
 - [ ] p-n junction I-V curve — **Need search**
 - [ ] LED emission spectrum — **Need search**
 
+### p-n Junction & LED
+
+| Paper | Authors | Year | Journal | Citations | Key Data | Link |
+|-------|---------|------|---------|-----------|----------|------|
+| Pn junction devices and light emitting diodes | S. Kasap | 2001 | — | 11 | **p-n junction I-V curves**, injection electroluminescence, LED spectrum | [PDF](http://www.phy.olemiss.edu/~cremaldi/PHYS417/PNJunctionDevices.pdf) |
+| Field-effect electroluminescence spectra of reverse-biased PN junctions in Si | K. Xu et al. | 2015 | IEEE | 21 | **Si LED electroluminescence spectrum**, gate-controlled diode | [IEEE](https://ieeexplore.ieee.org/abstract/document/7214200/) |
+
 ## Gaps
 
 - RHEED oscillation data
-- p-n junction I-V curves, solar cells, LEDs
-- Surface state / work function data
+- Solar cell I-V characteristics
+- Surface state / work function table

@@ -32,8 +32,9 @@
 
 | Paper | Authors | Year | Journal | Citations | Key Data | Link |
 |-------|---------|------|---------|-----------|----------|------|
-| Review of the physics of high-temperature superconductors | C.P. Enz | 2007 | Springer | 5 | Bednorz-Mueller discovery overview, YBCO Tc=93K | [Springer](https://link.springer.com/chapter/10.1007/BFb0106020) |
-| High Temperature Superconductivity | C.W. Chu | 1996 | Springer | 8 | YBCO experimental discovery narrative, pressure effects on Tc | [Springer](https://link.springer.com/chapter/10.1007/978-1-4613-1147-8_42) |
+| Perovskite-type oxides — The new approach to high-Tc superconductivity (Nobel Lecture) | J.G. Bednorz, K.A. Mueller | 1988 | Rev. Mod. Phys. | 988 | **Bednorz-Mueller Nobel lecture** — La-Ba-Cu-O discovery, original data | [PDF](https://link.aps.org/pdf/10.1103/RevModPhys.60.585) |
+| The discovery of a class of high-temperature superconductors | K.A. Mueller, J.G. Bednorz | 1987 | Science | 286 | High-Tc materials overview, cubic niobium vs layer-like copper compounds | [PDF](http://www.w2agz.com/Library/HTSC%20History/Mueller%20&%20Bednorz,%20Science%20237,%201133%20(1987).pdf) |
+| Review of the physics of high-temperature superconductors | C.P. Enz | 2007 | Springer | 5 | YBCO Tc=93K overview | [Springer](https://link.springer.com/chapter/10.1007/BFb0106020) |
 
 ### BCS Gap & Isotope Effect
 
@@ -41,23 +42,43 @@
 |-------|---------|------|---------|-----------|----------|------|
 | Isotope effect in superconducting transition temperature | R. Kishore | 1999 | Book | 10 | **Isotope coefficient table** for non-transition metals, BCS theory vs experiment | [Google Books](https://books.google.com/books?id=6kTSyhek2y8C) |
 
+### Flux Quantization
+
+| Paper | Authors | Year | Journal | Citations | Key Data | Link |
+|-------|---------|------|---------|-----------|----------|------|
+| Flux quantization (review chapter) | C. Gough | 2022 | Taylor & Francis | 1 | **Deaver-Fairbank 1961 experiment** — flux quantization in units of h/2e, thin cylinder measurement | [T&F](https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.1201/9780429179181-13&type=chapterpdf) |
+
+### Type II Vortex Imaging
+
+| Paper | Authors | Year | Journal | Citations | Key Data | Link |
+|-------|---------|------|---------|-----------|----------|------|
+| Nobel Lecture: Type-II superconductors and the vortex lattice | A.A. Abrikosov | 2004 | Rev. Mod. Phys. | 382 | **Abrikosov Nobel lecture** — references Essmann & Trauble 1967 vortex decoration, Fig. 5 | [PDF](https://link.aps.org/pdf/10.1103/RevModPhys.76.975) |
+| High-resolution Bitter decoration for magnetic flux structure imaging | L.Y. Vinnikov et al. | 2019 | Instrum. Exp. Tech. | 13 | Modern Bitter decoration of Abrikosov vortices, Trauble & Essmann method described | [PDF](https://www.researchgate.net/profile/L-Vinnikov/publication/335014492) |
+
+### BCS Specific Heat
+
+| Paper | Authors | Year | Journal | Citations | Key Data | Link |
+|-------|---------|------|---------|-----------|----------|------|
+| Equilibrium properties: Comparison of experimental results with BCS theory | R. Meservey, B.B. Schwartz | 2018 | Taylor & Francis | 65 | **Specific heat jump at Tc** — Al, Sn experimental data vs BCS predictions | [T&F](https://www.taylorfrancis.com/chapters/edit/10.1201/9780203737965-3/) |
+
 ## Success Criteria Status
 
-- [x] R vs T curve showing SC transition — Van Delft 2010 (Onnes's Hg plot, 618 citations!)
-- [x] Meissner effect M vs H data — Geim 1998 (Nature, flux captured/expelled)
-- [x] Tunneling I-V or dI/dV showing gap — Giaever Nobel lecture 1974 (Al-Al2O3-Pb)
-- [x] Josephson I-V characteristic — Shapiro 1963 (1595 citations, Shapiro steps)
-- [ ] Tc table (20+ superconductors) — **Need comprehensive compilation**
-- [x] BCS gap ratio / isotope effect — Kishore 1999 (isotope coefficient table)
-- [ ] Specific heat anomaly at Tc — **Need search**
-- [ ] Hc1, Hc2 data for Type II — **Need search**
-- [ ] Type II vortex imaging — **Need Essmann/Trauble 1967**
+- [x] R vs T curve showing SC transition — Van Delft 2010 (Onnes Hg, 618 cit)
+- [x] Meissner effect M vs H data — Geim 1998 (Nature)
+- [x] Tunneling I-V showing gap — Giaever Nobel 1974
+- [x] Josephson I-V characteristic — Shapiro 1963 (1595 cit)
+- [ ] Tc table (20+ superconductors) — **Still need compilation**
+- [x] BCS gap ratio / isotope effect — Kishore 1999
+- [x] Specific heat anomaly at Tc — Meservey & Schwartz (Al, Sn vs BCS)
+- [x] Type II vortex imaging — Abrikosov Nobel 2004 (382 cit, Essmann-Trauble Fig.)
+- [x] Flux quantization — Gough 2022 (Deaver-Fairbank h/2e)
+- [x] High-Tc discovery — Bednorz-Mueller Nobel 1988 (988 cit, **PDF available!**)
 
 ## Gaps
 
 - Comprehensive Tc table (elements + compounds + high-Tc)
-- Bednorz & Mueller original 1986 paper (Z. Physik B)
-- Wu et al. 1987 YBCO paper (Phys. Rev. Lett.)
+- London penetration depth measurements
+- Hc1, Hc2 tabulated data for Type II superconductors
 - Essmann & Trauble 1967 vortex decoration images
 - Flux quantization — Deaver/Fairbank 1961
 - Specific heat jump at Tc (Al, Sn)
