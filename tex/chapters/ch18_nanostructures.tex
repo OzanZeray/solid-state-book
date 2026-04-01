@@ -1,23 +1,57 @@
 \chapter{Nanostructures}
 
+When the dimensions of a solid are reduced to the nanometer scale---comparable to the electron wavelength or the mean free path---quantum confinement and surface effects dominate. This chapter presents experimental data on one-dimensional (1D) and zero-dimensional (0D) systems.
+
 \section{Imaging Techniques for Nanostructures}
 
-\subsection{Scanning Tunneling Microscopy}
-% Experimental: Eigler et al. 1991 (Nature, 1132 cit) -- atomic switch, Xe on Ni
-% Experimental: Zeppenfeld et al. 1992 (165 cit) -- atom positioning on Ni(110)
-% Experimental: Eigler 1999 (31 cit) -- building "IBM" from Xe atoms
+The scanning tunneling microscope (Chapter~1) and the atomic force microscope are the primary tools for imaging nanostructures with atomic resolution.
 
-\section{Electrical Transport in 1D}
+\subsection{Atomic Manipulation with the STM}
 
-\subsection{Conductance Quantization}
-% Experimental: Gao et al. 2025 -- Cu quantum point contacts, G = nG_0
-% Data: conductance staircase in units of 2e^2/h
+Don Eigler at IBM Almaden demonstrated that the STM can not only image individual atoms but also \textit{move} them~\cite{eigler1991switch}. In 1990, Eigler and Schweizer positioned 35 xenon atoms on a Ni(110) surface to spell ``IBM''---the first demonstration of atomic-scale engineering.
 
-\section{Electronic Structure of 0D Systems}
+Eigler et al.\ (1991) further demonstrated an \textbf{atomic switch}: a single Xe atom could be transferred reversibly between the STM tip and the Ni surface by voltage pulses. This paper in \textit{Nature} (1132 citations) opened the field of single-atom manipulation.
 
-\subsection{Coulomb Blockade}
-% Experimental: Allerbeck et al. 2025 (Nature Comm.) -- ultrafast Coulomb blockade
-% Data: quantized charge states, G_0 measurement
 
-\section{Vibrational and Thermal Properties of Nanostructures}
-% Quantized vibrational modes, heat capacity
+\section{Conductance Quantization}
+
+In a quantum point contact---a narrow constriction between two electron reservoirs---the electrical conductance is quantized in units of the \textbf{conductance quantum}:
+\begin{equation}
+  G_0 = \frac{2e^2}{h} = \SI{7.748e-5}{\siemens} = (12906\;\Omega)^{-1}
+\end{equation}
+
+Each transverse mode that fits through the constriction contributes one quantum of conductance. As the constriction is widened (by gate voltage), the conductance increases in steps of $G_0$---the famous ``conductance staircase.''
+
+This was first observed independently by van Wees et al.\ (1988) in a GaAs point contact and by Wharam et al.\ (1988) in a split-gate device.
+
+
+\section{Quantum Dots: Artificial Atoms}
+
+A quantum dot confines electrons in all three dimensions, producing discrete energy levels like an atom. The \textbf{Coulomb blockade} occurs when the charging energy $E_C = e^2/2C$ (where $C$ is the dot capacitance) exceeds $k_BT$: adding a single electron to the dot requires a measurable voltage step:
+\begin{equation}
+  \Delta V = \frac{e}{C}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Characteristic energy scales in quantum dots.}
+\label{tab:qdot}
+\begin{tabular}{@{}lSS@{}}
+\toprule
+Dot type & {Charging energy $E_C$ (\si{\milli\electronvolt})} & {Level spacing $\Delta E$ (\si{\milli\electronvolt})} \\
+\midrule
+GaAs lateral dot ($d \sim \SI{100}{\nano\metre}$) & 1{--}5 & 0.1{--}0.5 \\
+Self-assembled InAs dot & 20{--}50 & 10{--}30 \\
+Metallic nanoparticle ($d \sim \SI{5}{\nano\metre}$) & 50{--}200 & 0.01{--}0.1 \\
+Single molecule (C$_{60}$) & 200{--}500 & 50{--}100 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Semiconductor Nanocrystals}
+
+Colloidal semiconductor nanocrystals (CdSe, InP) exhibit size-tunable photoluminescence: as the dot diameter decreases from \SI{6}{\nano\metre} to \SI{2}{\nano\metre}, the emission shifts from red to blue due to quantum confinement. This work, pioneered by Brus and Alivisatos, was recognized with the 2023 Nobel Prize in Chemistry.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{Having explored the physics of perfect and nanostructured crystals, we now examine solids that lack long-range order.}

@@ -1,15 +1,67 @@
 \chapter{Point Defects}
 
+No crystal is perfect. Point defects---vacancies, interstitials, and impurity atoms---are present in every real crystal and have profound effects on mechanical, electrical, and optical properties.
+
 \section{Lattice Vacancies}
-% Vacancy formation energy, concentration vs temperature
+
+A vacancy is an empty lattice site. The equilibrium concentration at temperature $T$ is:
+\begin{equation}
+  n_v = N\exp\left(-\frac{E_v}{k_BT}\right)
+\end{equation}
+where $E_v$ is the vacancy formation energy.
+
+\begin{table}[H]
+\centering
+\caption{Vacancy formation energies in metals, from experimental measurements (positron annihilation, differential thermal expansion, quenching experiments).}
+\label{tab:vacancy}
+\begin{tabular}{@{}lSS@{}}
+\toprule
+Metal & {$E_v$ (\si{\electronvolt})} & {$n_v/N$ at melting point} \\
+\midrule
+Cu & 1.28 & 2e-4 \\
+Ag & 1.09 & 2e-4 \\
+Au & 0.94 & 7e-4 \\
+Al & 0.75 & 9e-4 \\
+Pb & 0.49 & 2e-3 \\
+Na & 0.42 & 7e-3 \\
+Fe & 1.60 & 1e-4 \\
+W  & 3.60 & 4e-7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The vacancy concentration at the melting point ranges from $\sim 10^{-3}$ (Na, Pb---low $E_v$) to $\sim 10^{-7}$ (W---very high $E_v$). Even the highest concentrations correspond to only one vacancy per $\sim$1000 atoms.
 
 \section{Color Centers}
 
 \subsection{F Centers}
-% Experimental: Seitz 1946 (612 cit) -- definitive F-center review
-% Experimental: Hersh 1966 (389 cit) -- excitonic mechanism of color-center formation
-% Data: F-center absorption spectra in alkali halides (KCl, NaCl, KBr)
-% Data: peak wavelengths, Mollwo-Ivey relation
 
-\section{Diffusion}
-% Vacancy mechanism in metals
+An \textbf{F center} (from the German \textit{Farbe}, color) is an electron trapped at an anion vacancy in an alkali halide crystal. The trapped electron absorbs visible light, giving the crystal a characteristic color.
+
+Seitz (1946)~\cite{seitz1946fcenters} wrote the definitive review of color centers (612 citations), establishing the F center as a model quantum system---essentially a particle in a box formed by the surrounding cations.
+
+\begin{table}[H]
+\centering
+\caption{F-center absorption peak wavelengths and energies in alkali halides.}
+\label{tab:fcenter}
+\begin{tabular}{@{}lSSl@{}}
+\toprule
+Crystal & {$\lambda_{\max}$ (\si{\nano\metre})} & {$E$ (\si{\electronvolt})} & Color \\
+\midrule
+LiF  & 250 & 4.96 & colorless (UV) \\
+NaF  & 340 & 3.65 & colorless (UV) \\
+NaCl & 465 & 2.67 & yellow-brown \\
+NaBr & 540 & 2.30 & brown \\
+KCl  & 563 & 2.20 & violet \\
+KBr  & 620 & 2.00 & blue-green \\
+KI   & 690 & 1.80 & green \\
+RbCl & 620 & 2.00 & blue \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The F-center absorption shifts to longer wavelengths (lower energies) as the lattice parameter increases---the \textbf{Mollwo--Ivey relation}: $E \propto a^{-n}$ with $n \approx 1.8$. This is a direct consequence of the larger ``box'' (anion vacancy) in crystals with bigger lattice constants.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{Extended line defects---dislocations---determine the mechanical properties of real crystals.}

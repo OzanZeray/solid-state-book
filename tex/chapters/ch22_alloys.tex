@@ -1,22 +1,105 @@
 \chapter{Alloys}
 
+An alloy is a mixture of two or more elements, at least one of which is a metal. The properties of alloys---mechanical strength, electrical conductivity, magnetic behavior---often differ dramatically from those of their constituent elements. This chapter presents the experimental data on alloy structure, order--disorder transitions, phase diagrams, and the Kondo effect.
+
 \section{Substitutional Solid Solutions}
-% Hume-Rothery rules
+
+When atoms of element B dissolve substitutionally in the lattice of element A, a solid solution forms if the Hume--Rothery rules are satisfied:
+\begin{enumerate}[nosep]
+  \item Atomic size difference $< 15\%$.
+  \item Same crystal structure preferred.
+  \item Similar electronegativity.
+  \item Same valence preferred.
+\end{enumerate}
+
+Cu--Ni is a model system: complete solid solubility across the entire composition range (both fcc, similar size, similar electronegativity).
 
 \section{Order--Disorder Transformation}
-% Experimental: Lubarda 2003 (393 cit) -- Vegard's law, Cu3Au ordering
-% Experimental: Venkataraman 1984 -- Cu-Zn beta-brass, Cu3Au L12 ordering
-% Data: superlattice diffraction lines, order parameter vs T
+
+In certain alloy compositions, atoms can arrange themselves on an ordered superlattice below a critical temperature $T_c$. The classic example is Cu$_3$Au:
+
+\begin{itemize}[nosep]
+  \item \textbf{Disordered} ($T > T_c \approx \SI{663}{\kelvin}$): Cu and Au randomly occupy fcc sites.
+  \item \textbf{Ordered} ($T < T_c$): Au occupies corner sites, Cu occupies face-center sites (L1$_2$ structure).
+\end{itemize}
+
+The ordering is detected by the appearance of \textbf{superlattice diffraction lines} that are systematically absent in the disordered phase. For example, the $(100)$ reflection is forbidden in fcc (mixed indices) but allowed in the L1$_2$ structure because the corner and face sites are no longer equivalent.
+
 
 \section{Phase Diagrams}
 
-\subsection{Eutectics}
-% Experimental: Dinsdale et al. 2012 -- Cu-Zn, Pb-Sn eutectic phase diagrams
-% Data: binary phase diagrams with liquidus, solidus, invariant reactions
+A binary phase diagram shows the equilibrium phases as a function of temperature and composition.
 
-\section{Electrical Conductivity}
+\subsection{Eutectic Systems}
 
-\subsection{Kondo Effect}
-% Experimental: Kondo 1964 (5575 cit) -- resistance minimum in dilute magnetic alloys
-% Experimental: Kondo 1970 (468 cit) -- comprehensive theory review
-% Data: resistivity vs T showing logarithmic upturn below T_K
+In a eutectic system, two components have limited solid solubility and a eutectic point where both solidify simultaneously. The Pb--Sn system is the classic example:
+\begin{itemize}[nosep]
+  \item Eutectic composition: 61.9 wt\% Sn
+  \item Eutectic temperature: \SI{183}{\celsius}
+  \item Traditional solder composition (now largely replaced by lead-free solders)
+\end{itemize}
+
+\subsection{Brass (Cu--Zn)}
+
+The Cu--Zn phase diagram shows multiple intermetallic phases ($\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$, $\eta$):
+\begin{itemize}[nosep]
+  \item $\alpha$ brass (up to 35\% Zn): fcc solid solution, ductile
+  \item $\beta$ brass ($\sim$50\% Zn): bcc (B2 structure), undergoes order--disorder transition at \SI{468}{\celsius}
+  \item Higher Zn: complex intermetallic phases
+\end{itemize}
+
+
+\section{Electrical Conductivity of Alloys}
+
+The residual resistivity of a dilute alloy (impurity concentration $c$) follows \textbf{Matthiessen's rule}:
+\begin{equation}
+  \rho(T) = \rho_{\text{phonon}}(T) + \rho_{\text{impurity}}(c)
+\end{equation}
+
+For a random binary alloy A$_{1-x}$B$_x$, the impurity resistivity follows the \textbf{Nordheim rule}:
+\begin{equation}
+  \rho_{\text{imp}} \propto x(1-x)
+\end{equation}
+with a maximum at $x = 0.5$. This parabolic composition dependence has been verified for many alloy systems including Cu--Au, Cu--Ni, and Ag--Au.
+
+
+\section{The Kondo Effect}
+
+\subsection{Resistance Minimum in Dilute Magnetic Alloys}
+
+In 1964, Jun Kondo~\cite{kondo1964resistance} solved one of the oldest puzzles in the physics of metals: the \textbf{resistance minimum} observed in dilute alloys of nonmagnetic metals containing small concentrations of magnetic impurities (e.g., Fe in Cu, Mn in Au).
+
+Below a characteristic temperature $T_K$ (the \textbf{Kondo temperature}), the resistivity increases logarithmically as $T$ decreases:
+\begin{equation}
+  \rho(T) \propto \rho_0 - c\,J\,\ln(T/T_K) \quad (T > T_K)
+\end{equation}
+where $J$ is the exchange coupling between the impurity spin and conduction electrons. At $T = 0$, the impurity spin is completely screened by a cloud of conduction electrons, forming a many-body singlet state.
+
+Kondo's 1964 paper has 5575 citations---one of the most cited papers in all of solid state physics. The Kondo effect is now recognized as a paradigm for strongly correlated electron physics, with analogs in quantum dots, nanowires, and even cold atomic gases.
+
+\begin{table}[H]
+\centering
+\caption{Kondo temperatures for selected dilute magnetic alloy systems.}
+\label{tab:kondo}
+\begin{tabular}{@{}llS@{}}
+\toprule
+Host & Impurity & {$T_K$ (\si{\kelvin})} \\
+\midrule
+Cu & Fe & 30 \\
+Cu & Mn & 0.01 \\
+Cu & Cr & 2 \\
+Au & Fe & 0.3 \\
+Au & Mn & 0.01 \\
+Al & Mn & 600 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Kondo temperature spans 5 orders of magnitude, from \SI{0.01}{\kelvin} (Cu:Mn) to \SI{600}{\kelvin} (Al:Mn), reflecting the exponential sensitivity of $T_K$ to the exchange coupling $J$ and the density of states at the Fermi level.
+
+\vspace{2cm}
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}\\[0.5cm]
+{\large\itshape This concludes our survey of the experimental data\\
+underlying introductory solid state physics.}
+\end{center}

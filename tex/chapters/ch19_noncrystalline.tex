@@ -1,21 +1,72 @@
 \chapter{Noncrystalline Solids}
 
-\section{Diffraction Pattern}
-% Broad hump vs sharp Bragg peaks
+Not all solids are crystalline. Glasses, amorphous semiconductors, and polymers lack long-range periodic order while retaining short-range structural correlations. The experimental characterization of these disordered structures relies on the radial distribution function obtained from diffraction.
+
+\section{Diffraction Pattern of Amorphous Solids}
+
+A crystalline solid produces sharp Bragg peaks; an amorphous solid produces broad, diffuse halos. The position of the first halo corresponds roughly to the most probable nearest-neighbor distance.
 
 \section{Radial Distribution Function}
 
-\subsection{Amorphous Silicon}
-% Experimental: Laaziri et al. 1999 (333 cit) -- RDF of a-Si before/after annealing
-% Data: g(r) from high-energy X-ray diffraction
+The \textbf{radial distribution function} (RDF) $g(r)$ gives the probability of finding an atom at distance $r$ from a reference atom, relative to a uniform distribution. For a crystalline solid, $g(r)$ has sharp peaks at the lattice spacings; for an amorphous solid, the peaks broaden and disappear beyond a few atomic diameters.
 
-\subsection{Vitreous Silica}
-% Experimental: Wright 1994 (444 cit) -- 60 years of SiO2 glass structure
-% Experimental: Henninger et al. 1967 (54 cit) -- X-ray + neutron RDF of SiO2
-% Data: pair distribution function, Si-O and O-O distances
+\subsection{Amorphous Silicon}
+
+Laaziri et al.\ (1999) measured the RDF of amorphous silicon using high-energy X-ray diffraction, both before and after annealing:
+
+\begin{table}[H]
+\centering
+\caption{Structural parameters of amorphous Si from the radial distribution function. Data from Laaziri et al.\ (1999).}
+\label{tab:asi}
+\begin{tabular}{@{}lSS@{}}
+\toprule
+Parameter & {a-Si (as deposited)} & {a-Si (annealed)} \\
+\midrule
+1st neighbor distance (\si{\angstrom})     & 2.35 & 2.35 \\
+Coordination number                         & 3.88 & 3.97 \\
+2nd neighbor distance (\si{\angstrom})     & 3.83 & 3.84 \\
+Bond angle (deg)                            & 108.5 & 109.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The first-neighbor distance (\SI{2.35}{\angstrom}) is identical to crystalline Si ($d = a\sqrt{3}/4 = \SI{2.352}{\angstrom}$), confirming that the tetrahedral bonding is preserved. The coordination number ($\approx 4$) and bond angle ($\approx 109°$) are close to the perfect tetrahedral values. However, the \textit{second}-neighbor peak is already broadened, indicating disorder in the dihedral angles.
+
+\subsection{Vitreous Silica (SiO$_2$)}
+
+Wright (1994) provided a definitive review of 60 years of diffraction studies on vitreous SiO$_2$---one of the most important amorphous materials (optical fibers, MOSFET gate oxide). The key structural features:
+\begin{itemize}[nosep]
+  \item Si--O bond length: \SI{1.608}{\angstrom} (identical to crystalline quartz)
+  \item O--Si--O angle: $109.5°$ (tetrahedral)
+  \item Si--O--Si angle: $\sim 144°$ (with broad distribution from $120°$ to $180°$)
+  \item Coordination: each Si has exactly 4 oxygen neighbors; each O bridges exactly 2 Si atoms
+\end{itemize}
+
+The continuous random network model of Zachariasen (1932) correctly predicts these local structural features.
+
 
 \section{Glasses}
-% Viscosity and hopping rate, glass transition
 
-\section{Amorphous Semiconductors}
-% Transport in a-Si:H
+A \textbf{glass transition} occurs when a supercooled liquid becomes so viscous that it can no longer flow on experimental timescales. The glass transition temperature $T_g$ is defined where the viscosity reaches $\sim 10^{13}$ poise.
+
+\begin{table}[H]
+\centering
+\caption{Glass transition temperatures of selected materials.}
+\label{tab:glass}
+\begin{tabular}{@{}lS@{}}
+\toprule
+Material & {$T_g$ (\si{\kelvin})} \\
+\midrule
+SiO$_2$ (fused silica) & 1475 \\
+Pyrex glass & 825 \\
+Soda-lime glass & 840 \\
+Polystyrene & 373 \\
+Glycerol & 190 \\
+Se & 310 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{Real crystals always contain defects. The simplest---point defects---are the subject of the next chapter.}
