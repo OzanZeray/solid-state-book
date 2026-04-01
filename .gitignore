@@ -21,3 +21,6 @@ tex/*.blg
 *.lnk
 .DS_Store
 Thumbs.db
+.bcf
+*.aux
+*.py

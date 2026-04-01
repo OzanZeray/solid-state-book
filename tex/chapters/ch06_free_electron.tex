@@ -15,7 +15,7 @@ At $T = 0$, all states up to the Fermi energy $E_F$ are occupied. For a free ele
 \label{tab:fermi}
 \begin{tabular}{@{}lSSSSS@{}}
 \toprule
-Metal & {$n$ ($10^{28}$ \si{\per\metre\cubed})} & {$E_F$ (\si{\electronvolt})} & {$T_F$ ($10^4$ \si{\kelvin})} & {$v_F$ ($10^6$ \si{\metre\per\second})} & {$k_F$ (\si{\per\angstrom})} \\
+Metal & {$n$ ($10^{28}$ \si{\per\metre\cubed})} & {$E_F$ (\si{\electronvolt})} & {$T_F$ ($10^4$ \si{\kelvin})} & {$v_F$ ($10^6$ \si{\metre\per\second})} & {$k_F$ (\AA{}$^{-1}$)} \\
 \midrule
 Li & 4.70 & 4.74 & 5.51 & 1.29 & 1.12 \\
 Na & 2.65 & 3.24 & 3.77 & 1.07 & 0.92 \\
@@ -89,7 +89,37 @@ The effective mass in CeAl$_3$ is $m^* \approx 1000\,m_e$---the electrons behave
 
 In the Drude model, the electrical conductivity is $\sigma = ne^2\tau/m$, where $\tau$ is the relaxation time. The resistivity $\rho = 1/\sigma$ follows the Bloch--Gr\"uneisen formula at low temperatures, varying as $T^5$ below $\Theta_D/5$ and linearly in $T$ above $\Theta_D$.
 
-The experimental resistivity of copper varies from $\rho \approx \SI{0.002}{\micro\ohm\centi\metre}$ at \SI{4}{\kelvin} (limited by impurities) to $\rho = \SI{1.67}{\micro\ohm\centi\metre}$ at \SI{300}{\kelvin} (limited by phonon scattering).
+The experimental resistivity of copper has been measured with extraordinary precision. Matula (1979), in a 904-citation NIST reference paper, compiled recommended values for Cu, Au, Pd, and Ag from cryogenic to beyond the melting point. Bass et al.\ (1982) measured Cu, V, and Pt resistivity from 6--327 K, finding excellent agreement with the Bloch--Gr\"uneisen formula over the entire range.
+
+\begin{table}[H]
+\centering
+\caption{Recommended electrical resistivity of copper as a function of temperature. Data from Matula (1979), J.\ Phys.\ Chem.\ Ref.\ Data 8, 1147.}
+\label{tab:cu_resistivity}
+\begin{tabular}{@{}SS@{}}
+\toprule
+{$T$ (K)} & {$\rho$ ($\mu\Omega\cdot$cm)} \\
+\midrule
+  4   & 0.002 \\
+ 10   & 0.002 \\
+ 20   & 0.008 \\
+ 40   & 0.054 \\
+ 60   & 0.162 \\
+ 80   & 0.322 \\
+100   & 0.520 \\
+150   & 0.963 \\
+200   & 1.358 \\
+250   & 1.524 \\
+300   & 1.678 \\
+400   & 2.402 \\
+500   & 3.090 \\
+600   & 3.792 \\
+800   & 5.262 \\
+1000  & 6.858 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The residual resistivity ($\rho_0 \approx \SI{0.002}{\micro\ohm\centi\metre}$ at 4 K) reflects the sample purity. The residual resistivity ratio RRR $= \rho(300\text{K})/\rho(4\text{K}) \approx 840$ for this high-purity sample. Below $\sim$40 K, the $T^5$ Bloch--Gr\"uneisen behavior dominates; above $\sim$150 K, the resistivity is nearly linear in $T$.
 
 
 \section{Hall Effect}

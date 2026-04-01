@@ -26,12 +26,57 @@ The non-integer magnetic moments (2.22, 1.72, 0.60 $\mu_B$) cannot be explained 
 
 \subsection{Temperature Dependence of Magnetization}
 
-The spontaneous magnetization decreases smoothly from $M_s(0)$ at $T = 0$ to zero at $T_C$. Oliver and Sucksmith (1953) measured $M(T)$ curves for Ni alloys, comparing them with the molecular field (Brillouin function) prediction.
-
-At low temperatures, $M$ decreases as $T^{3/2}$ due to thermal excitation of spin waves (magnons):
+The spontaneous magnetization decreases smoothly from $M_s(0)$ at $T = 0$ to zero at $T_C$. At low temperatures, $M$ decreases as $T^{3/2}$ due to thermal excitation of spin waves (magnons)---the \textbf{Bloch $T^{3/2}$ law}:
 \begin{equation}
-  M(T) = M(0)\left[1 - \left(\frac{T}{T_0}\right)^{3/2}\right] \quad (\text{Bloch } T^{3/2} \text{ law})
+  \frac{\Delta I}{I_0} = cT^{3/2}
 \end{equation}
+
+\paragraph{Experimental verification: Rode \& Herrmann (1964).} V.~E.~Rode and R.~Herrmann measured the saturation magnetization of polycrystalline Fe, Co, and Ni in fields up to 20 kOe in the temperature range 4.2--70 K. Their data, extracted from the original Soviet Physics JETP paper, are presented below.
+
+\begin{table}[H]
+\centering
+\caption{Change in saturation magnetization $\Delta I$ (G) of iron as a function of temperature at $H = 20$~kOe. Data from Rode \& Herrmann (1964), JETP 19(5), 1081.}
+\label{tab:fe_magnetization}
+\begin{tabular}{@{}SS|SS@{}}
+\toprule
+{$T$ (K)} & {$\Delta I$ (G)} & {$T$ (K)} & {$\Delta I$ (G)} \\
+\midrule
+4.2  & 0     & 25.0 & 0.90 \\
+5.4  & 0.03  & 27.6 & 1.05 \\
+7.1  & 0.08  & 30.4 & 1.24 \\
+9.0  & 0.15  & 34.9 & 1.53 \\
+10.0 & 0.19  & 40.0 & 1.84 \\
+12.0 & 0.27  & 44.8 & 2.22 \\
+13.5 & 0.34  & 49.1 & 2.58 \\
+15.9 & 0.44  & 53.4 & 2.95 \\
+18.0 & 0.54  & 61.0 & 3.50 \\
+21.8 & 0.76  &      &      \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Bloch $T^{3/2}$ law coefficients extracted from these data are:
+
+\begin{table}[H]
+\centering
+\caption{Bloch law coefficient $c$ and exchange integral $A$ for Fe, Co, Ni. Data from Rode \& Herrmann (1964).}
+\label{tab:bloch_coeff}
+\begin{tabular}{@{}lSSS@{}}
+\toprule
+Metal & {$c \times 10^{6}$} & {$A$ (erg)} & {$T$ range (K)} \\
+\midrule
+Fe & 4.5  & {$1.59 \times 10^{-14}$} & {4.2--70} \\
+Co & 2.4  & {$2.92 \times 10^{-14}$} & {11--70} \\
+Ni & 9.3  & {$2.3 \times 10^{-14}$}  & {4.2--70} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Above 30 K, nickel shows a significant departure from the pure $T^{3/2}$ law. Rode and Herrmann showed that the data are better described by:
+\begin{equation}
+  \frac{\Delta I}{I_0} = cT^{3/2} + dT^{5/2}e^{-\Delta/k_BT}
+\end{equation}
+with $\Delta/k_B = (98 \pm 4)$ K, providing evidence for an energy gap in the magnon spectrum at the zone boundary.
 
 \section{Antiferromagnetic Order}
 
