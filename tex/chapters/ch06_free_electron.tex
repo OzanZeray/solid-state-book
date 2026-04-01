@@ -1,29 +1,160 @@
 \chapter{Free Electron Fermi Gas}
 
+The free electron model treats valence electrons in a metal as a gas of non-interacting fermions confined to the volume of the crystal. Despite its simplicity, this model explains the electronic heat capacity, electrical and thermal conductivity, and the Hall effect with remarkable accuracy.
+
 \section{Energy Levels and the Fermi--Dirac Distribution}
-% Free electron gas in 1D and 3D
+
+At $T = 0$, all states up to the Fermi energy $E_F$ are occupied. For a free electron gas of density $n$:
+\begin{equation}
+  E_F = \frac{\hbar^2}{2m}\left(3\pi^2 n\right)^{2/3}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Free electron Fermi energies and related parameters for monovalent metals.}
+\label{tab:fermi}
+\begin{tabular}{@{}lSSSSS@{}}
+\toprule
+Metal & {$n$ ($10^{28}$ \si{\per\metre\cubed})} & {$E_F$ (\si{\electronvolt})} & {$T_F$ ($10^4$ \si{\kelvin})} & {$v_F$ ($10^6$ \si{\metre\per\second})} & {$k_F$ (\si{\per\angstrom})} \\
+\midrule
+Li & 4.70 & 4.74 & 5.51 & 1.29 & 1.12 \\
+Na & 2.65 & 3.24 & 3.77 & 1.07 & 0.92 \\
+K  & 1.40 & 2.12 & 2.46 & 0.86 & 0.75 \\
+Cu & 8.47 & 7.04 & 8.16 & 1.57 & 1.36 \\
+Ag & 5.86 & 5.49 & 6.38 & 1.39 & 1.20 \\
+Au & 5.90 & 5.53 & 6.42 & 1.40 & 1.21 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Fermi temperatures are $\sim$\SI{e4}{\kelvin}---far above room temperature. This means that at ordinary temperatures, only a thin shell of electrons near $E_F$ participates in thermal and transport processes.
 
 \section{Heat Capacity of the Electron Gas}
-% Experimental: Martin 1968 (101 cit) -- gamma for Cu, Ag, Au at T < 3K
-% Data: C/T vs T^2 plots extracting gamma and Theta_D
+
+The electronic contribution to the heat capacity is:
+\begin{equation}
+  C_{\text{el}} = \gamma T = \frac{\pi^2}{3} D(E_F) k_B^2 T = \frac{\pi^2}{2}\frac{Nk_B T}{T_F}
+\end{equation}
+where $\gamma$ is the \textbf{Sommerfeld coefficient}.
+
+\paragraph{Experimental measurement.} Martin (1968)~\cite{martin1968specific} measured the specific heat of pure Cu, Ag, and Au below \SI{3}{\kelvin} with high precision, extracting $\gamma$ from the intercept of $C/T$ vs.\ $T^2$ plots:
+
+\begin{table}[H]
+\centering
+\caption{Experimental Sommerfeld coefficient $\gamma$ (\si{\milli\joule\per\mole\per\kelvin\squared}) compared with free electron theory.}
+\label{tab:gamma}
+\begin{tabular}{@{}lSSS@{}}
+\toprule
+Metal & {$\gamma_{\text{exp}}$} & {$\gamma_{\text{free}}$} & {$m^*/m_e$} \\
+\midrule
+Li & 1.63 & 0.749 & 2.18 \\
+Na & 1.38 & 1.094 & 1.26 \\
+K  & 2.08 & 1.668 & 1.25 \\
+Cu & 0.695 & 0.505 & 1.38 \\
+Ag & 0.646 & 0.645 & 1.00 \\
+Au & 0.729 & 0.642 & 1.14 \\
+Al & 1.35 & 0.912 & 1.48 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ratio $\gamma_{\text{exp}}/\gamma_{\text{free}} = m^*/m_e$ defines the thermal effective mass, which accounts for electron--phonon and electron--electron interactions not included in the free electron model. Silver is nearly free-electron-like ($m^*/m_e = 1.00$).
 
 \subsection{Heavy Fermions}
-% Experimental: CeAl3, CeCu2Si2 -- enormous Sommerfeld coefficient
-% Data: gamma values orders of magnitude larger than free electron prediction
+
+In certain rare-earth and actinide compounds, the Sommerfeld coefficient is \textit{enormous}---up to 1000 times the free-electron value:
+
+\begin{table}[H]
+\centering
+\caption{Sommerfeld coefficients of heavy fermion compounds.}
+\label{tab:heavy}
+\begin{tabular}{@{}lSl@{}}
+\toprule
+Compound & {$\gamma$ (\si{\milli\joule\per\mole\per\kelvin\squared})} & Notes \\
+\midrule
+CeAl$_3$     & 1620 & prototypical heavy fermion \\
+CeCu$_2$Si$_2$ & 1000 & first heavy fermion superconductor \\
+UBe$_{13}$   &  1100 & \\
+UPt$_3$      &  450 & \\
+\midrule
+Cu (for comparison) & 0.695 & normal metal \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The effective mass in CeAl$_3$ is $m^* \approx 1000\,m_e$---the electrons behave as if they were 1000 times heavier than free electrons, due to the hybridization of itinerant conduction electrons with localized 4$f$ states.
+
 
 \section{Electrical Conductivity and Ohm's Law}
 
-\subsection{Experimental Electrical Resistivity of Metals}
-% Data: resistivity vs T for Cu (Bloch-Gruneisen fit)
+In the Drude model, the electrical conductivity is $\sigma = ne^2\tau/m$, where $\tau$ is the relaxation time. The resistivity $\rho = 1/\sigma$ follows the Bloch--Gr\"uneisen formula at low temperatures, varying as $T^5$ below $\Theta_D/5$ and linearly in $T$ above $\Theta_D$.
+
+The experimental resistivity of copper varies from $\rho \approx \SI{0.002}{\micro\ohm\centi\metre}$ at \SI{4}{\kelvin} (limited by impurities) to $\rho = \SI{1.67}{\micro\ohm\centi\metre}$ at \SI{300}{\kelvin} (limited by phonon scattering).
+
 
 \section{Hall Effect}
-% Experimental: Hurd 2012 (1350 cit) -- comprehensive Hall coefficient table
-% Data: Hall coefficient sign and magnitude for metals
-% Anomalous sign in Be, Zn -- hole-like orbits
+
+An electric current flowing in a magnetic field experiences a transverse force, producing the Hall voltage. The Hall coefficient is:
+\begin{equation}
+  R_H = \frac{E_y}{j_x B_z} = -\frac{1}{ne} \quad \text{(free electrons)}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Experimental Hall coefficients $R_H$ ($10^{-11}$ \si{\metre\cubed\per\coulomb}) at room temperature, compared with free electron prediction $-1/ne$. Data from Hurd (2012)~\cite{hurd2012hall}.}
+\label{tab:hall}
+\begin{tabular}{@{}lSSl@{}}
+\toprule
+Metal & {$R_H$ (exp)} & {$-1/ne$ (free)} & Sign \\
+\midrule
+Li & -1.7  & -1.3  & $-$ (electron-like) \\
+Na & -2.5  & -2.4  & $-$ \\
+K  & -4.2  & -4.5  & $-$ \\
+Cu & -0.55 & -0.74 & $-$ \\
+Ag & -0.84 & -1.1  & $-$ \\
+Au & -0.72 & -1.1  & $-$ \\
+Al & -0.30 & -0.35 & $-$ \\
+\midrule
+Be & +2.4  & {--} & $+$ (hole-like!) \\
+Zn & +0.33 & {--} & $+$ \\
+Cd & +0.60 & {--} & $+$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The alkali metals agree well with the free electron prediction. However, Be, Zn, and Cd have \textit{positive} Hall coefficients, indicating that the dominant charge carriers behave like positive particles (holes). This anomaly cannot be explained by the free electron model and requires the energy band theory of Chapter~7.
 
 \section{Thermal Conductivity of Metals}
 
 \subsection{Wiedemann--Franz Law}
-% Experimental: Volklein et al. 2009 (184 cit) -- Lorenz number for metallic nanowires
-% Experimental: Wilson \& Cahill 2012 (150 cit) -- WF law validation in thin films
-% Data: L = kappa/(sigma T) comparison with L_0 = 2.44e-8 W Omega K^{-2}
+
+In metals, electrons carry both charge and heat. The ratio of thermal to electrical conductivity is:
+\begin{equation}
+  \frac{\kappa}{\sigma T} = L_0 = \frac{\pi^2}{3}\left(\frac{k_B}{e}\right)^2 = \SI{2.44e-8}{\watt\ohm\per\kelvin\squared}
+\end{equation}
+This is the \textbf{Lorenz number}. The Wiedemann--Franz law states that $L = \kappa/(\sigma T)$ should equal $L_0$ for all metals---a striking prediction of the free electron theory.
+
+\begin{table}[H]
+\centering
+\caption{Experimental Lorenz number $L$ ($10^{-8}$ \si{\watt\ohm\per\kelvin\squared}) at \SI{273}{\kelvin}. Theoretical value: $L_0 = 2.44$.}
+\label{tab:lorenz}
+\begin{tabular}{@{}lS@{}}
+\toprule
+Metal & {$L$ ($10^{-8}$)} \\
+\midrule
+Cu & 2.23 \\
+Ag & 2.31 \\
+Au & 2.35 \\
+Al & 2.14 \\
+Fe & 2.61 \\
+W  & 3.04 \\
+Pb & 2.47 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The agreement is remarkably good---within 10\% for most metals. V\"olklein et al.\ (2009) demonstrated that the Wiedemann--Franz law holds even for individual metallic nanowires, confirming its fundamental nature.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The free electron model's most serious failure---the inability to explain insulators, semiconductors, and anomalous Hall coefficients---is resolved by the energy band theory of the next chapter.}

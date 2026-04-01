@@ -1,25 +1,104 @@
 \chapter{Phonons I: Crystal Vibrations}
 
+The atoms in a crystal are not stationary---they vibrate about their equilibrium positions. These vibrations, quantized as \textit{phonons}, determine most of the thermal, acoustic, and transport properties of solids. In this chapter we present the experimental phonon dispersion curves that reveal how lattice vibrations propagate through crystals.
+
 \section{Vibrations of Crystals with Monatomic Basis}
-% Dispersion relation, first Brillouin zone, group velocity
+
+Consider a one-dimensional chain of identical atoms (mass $M$, spacing $a$) coupled by nearest-neighbor springs (force constant $C$). The dispersion relation is:
+\begin{equation}
+  \omega(k) = 2\sqrt{\frac{C}{M}}\left|\sin\frac{ka}{2}\right|
+\end{equation}
+
+Key features visible in experiments:
+\begin{itemize}[nosep]
+  \item At long wavelengths ($k \to 0$): $\omega \approx v_s |k|$, where $v_s = a\sqrt{C/M}$ is the sound velocity.
+  \item At the zone boundary ($k = \pi/a$): $\omega_{\max} = 2\sqrt{C/M}$, and the group velocity $v_g = d\omega/dk = 0$.
+  \item The dispersion is periodic in $k$ with period $2\pi/a$---the first Brillouin zone is $-\pi/a < k \leq \pi/a$.
+\end{itemize}
 
 \section{Phonon Dispersion: Experimental Measurements}
 
 \subsection{Inelastic Neutron Scattering}
-% Experimental: Brockhouse \& Stewart 1955 (143 cit) -- first phonon measurement in Al
-% Experimental: Brockhouse 1958 (113 cit) -- complete Al dispersion curves
-% Nobel Prize 1994: "for the development of neutron spectroscopy"
 
-\subsection{Monatomic Dispersion: Aluminum}
-% Data: phonon dispersion along high-symmetry directions
-% Force constants derived from experiment
+The experimental measurement of phonon dispersion relations was made possible by \textbf{inelastic neutron scattering}, developed by Bertram Brockhouse at Chalk River, Canada, in the 1950s. A monochromatic neutron beam scatters from a single crystal, creating or annihilating a single phonon. By measuring the energy and momentum of the scattered neutron, the phonon frequency $\omega(\mathbf{q})$ is determined:
+\begin{equation}
+  \hbar\omega = E_i - E_f, \qquad \hbar\mathbf{q} = \hbar\mathbf{k}_i - \hbar\mathbf{k}_f - \hbar\mathbf{G}
+\end{equation}
+
+Brockhouse was awarded the 1994 Nobel Prize in Physics ``for the development of neutron spectroscopy'' and ``for pioneering contributions to the development of neutron scattering techniques for studies of condensed matter.''
+
+\subsection{Aluminum: The First Phonon Dispersion Curve}
+
+Brockhouse and Stewart (1955)~\cite{brockhouse1955phonon} measured the first phonon dispersion curve ever recorded---for aluminum. In their experiment, neutrons from the NRX reactor at Chalk River were scattered from an Al single crystal, and the energy transfer was measured using a triple-axis spectrometer (also invented by Brockhouse).
+
+Aluminum is an fcc metal with one atom per primitive cell, so it has 3 acoustic branches (1 longitudinal + 2 transverse). The measured dispersion along the $[\xi00]$, $[\xi\xi0]$, and $[\xi\xi\xi]$ directions shows:
+
+\begin{table}[H]
+\centering
+\caption{Phonon frequencies at high-symmetry points in aluminum (\si{\tera\hertz}), from inelastic neutron scattering (Brockhouse 1958). $L$ = longitudinal, $T$ = transverse.}
+\label{tab:al_phonon}
+\begin{tabular}{@{}llS@{}}
+\toprule
+Symmetry point & Branch & {Frequency (\si{\tera\hertz})} \\
+\midrule
+$X$ $[100]$ zone boundary  & $L$  & 9.69 \\
+$X$ $[100]$ zone boundary  & $T$  & 5.76 \\
+$L$ $[111]$ zone boundary  & $L$  & 9.78 \\
+$L$ $[111]$ zone boundary  & $T$  & 4.48 \\
+$K$ $[110]$ zone boundary  & $T_1$ & 7.44 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+From the slope at $k \to 0$, the sound velocities are: $v_L^{[100]} = \SI{6420}{\metre\per\second}$ and $v_T^{[100]} = \SI{3240}{\metre\per\second}$, in agreement with the values calculated from the elastic constants of Chapter~3.
+
 
 \section{Two Atoms per Primitive Basis}
 
-\subsection{Alkali Halide Phonon Dispersion}
-% Experimental: Woods et al. 1960 (654 cit) -- NaI acoustic + optical branches
-% Experimental: Woods et al. 1963 (320 cit) -- KBr and NaI detailed dispersion
-% Data: acoustic and optical branch frequencies along symmetry directions
+When the primitive cell contains two atoms (masses $M_1$ and $M_2$), the dispersion relation splits into two branches:
+\begin{itemize}[nosep]
+  \item \textbf{Acoustic branch}: atoms move in phase (both sublattices move together).
+  \item \textbf{Optical branch}: atoms move out of phase (sublattices move against each other).
+\end{itemize}
+
+At $k = 0$, the optical branch has frequency $\omega_{\text{opt}} = \sqrt{2C(1/M_1 + 1/M_2)}$, while the acoustic branch has $\omega = 0$. Between the two branches there is a \textbf{frequency gap} in which no propagating phonon modes exist.
+
+\subsection{Sodium Iodide: Acoustic and Optical Branches}
+
+The landmark experimental demonstration of acoustic and optical phonon branches was by Woods, Cochran, and Brockhouse (1960)~\cite{woods1960nai}, who measured the complete phonon dispersion of NaI using inelastic neutron scattering at Chalk River.
+
+NaI was chosen because the large mass ratio ($M_{\text{I}}/M_{\text{Na}} = 127/23 = 5.5$) produces a wide gap between acoustic and optical branches, making both clearly resolvable. With 2 atoms per primitive cell, there are $3 \times 2 = 6$ phonon branches: 3 acoustic (1 LA + 2 TA) and 3 optical (1 LO + 2 TO).
+
+\begin{table}[H]
+\centering
+\caption{Phonon frequencies at the zone center and zone boundary in NaI (\si{\tera\hertz}), from Woods et al.\ (1960).}
+\label{tab:nai_phonon}
+\begin{tabular}{@{}llSS@{}}
+\toprule
+Direction & Branch & {$\Gamma$ point (\si{\tera\hertz})} & {Zone boundary (\si{\tera\hertz})} \\
+\midrule
+$[100]$ & LA  & 0    & 2.7 \\
+$[100]$ & TA  & 0    & 1.8 \\
+$[100]$ & LO  & 4.5  & 3.8 \\
+$[100]$ & TO  & 3.6  & 2.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The frequency gap between the top of the acoustic branches ($\sim$\SI{2.7}{\tera\hertz}) and the bottom of the optical branches ($\sim$\SI{3.6}{\tera\hertz}) is clearly visible in the experimental data. This gap has physical consequences: electromagnetic radiation in this frequency range cannot couple to the crystal lattice---a fact exploited in the Reststrahlen (residual ray) reflection technique.
+
+Woods et al.\ (1963) extended these measurements to KBr and provided a detailed study of the energy broadening of optical modes, giving experimental evidence for phonon lifetimes due to anharmonic interactions.
+
 
 \section{Quantization of Elastic Waves}
-% Phonon momentum, inelastic scattering by phonons
+
+A phonon is a quantum of lattice vibration with energy $\hbar\omega$ and crystal momentum $\hbar\mathbf{q}$. The mean number of phonons in mode $(\mathbf{q}, s)$ at temperature $T$ is given by the Bose--Einstein distribution:
+\begin{equation}
+  \langle n_{\mathbf{q}s} \rangle = \frac{1}{e^{\hbar\omega_{\mathbf{q}s}/k_BT} - 1}
+\end{equation}
+
+\paragraph{Phonon momentum and inelastic scattering.} The crystal momentum $\hbar\mathbf{q}$ of a phonon is \textit{not} true momentum---it is defined only modulo a reciprocal lattice vector $\mathbf{G}$. This distinction is important for phonon--phonon scattering processes (Umklapp vs.\ normal), which we will discuss in Chapter~5.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The thermal consequences of phonon statistics---heat capacity, thermal conductivity, and thermal expansion---are the subject of the next chapter.}

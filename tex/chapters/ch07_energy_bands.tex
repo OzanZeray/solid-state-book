@@ -1,21 +1,80 @@
 \chapter{Energy Bands}
 
-\section{Nearly Free Electron Model}
-% Origin and magnitude of the energy gap
+The free electron model fails to explain why some materials are metals and others are insulators or semiconductors. The resolution comes from solving the Schr\"odinger equation for electrons in the periodic potential of the crystal lattice, leading to the formation of energy bands separated by forbidden gaps.
 
-\section{Bloch Functions and the Kronig--Penney Model}
-% Wave equation in periodic potential, crystal momentum
+\section{Nearly Free Electron Model}
+
+Consider a free electron gas perturbed by a weak periodic potential $V(\mathbf{r}) = \sum_\mathbf{G} V_\mathbf{G} e^{i\mathbf{G}\cdot\mathbf{r}}$. The key result: at each Brillouin zone boundary, the energy levels split, opening a \textbf{band gap}:
+\begin{equation}
+  E_g = 2|V_\mathbf{G}|
+\end{equation}
+
+States with $\mathbf{k}$ exactly at the zone boundary form standing waves. One standing wave has its electron density peaked \textit{on} the ion cores (lower energy), the other has it peaked \textit{between} the ions (higher energy). This splitting is the origin of all band gaps.
+
+\section{Bloch's Theorem}
+
+Felix Bloch (1928) proved that the electron wavefunctions in a periodic potential have the form:
+\begin{equation}
+  \psi_{\mathbf{k}}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}} u_{\mathbf{k}}(\mathbf{r})
+\end{equation}
+where $u_\mathbf{k}$ has the periodicity of the lattice. This is the \textbf{Bloch function}. The wavevector $\mathbf{k}$ is a good quantum number, and the energy $E_n(\mathbf{k})$ forms continuous bands indexed by the band number $n$.
+
+\section{Metals and Insulators}
+
+The distinction between metals and insulators is determined by whether the Fermi level falls within a band (metal) or within a gap (insulator):
+\begin{itemize}[nosep]
+  \item \textbf{Metal}: partially filled band, electrons at $E_F$ can be accelerated by an electric field.
+  \item \textbf{Insulator}: completely filled bands separated from empty bands by a large gap ($E_g > \SI{4}{\electronvolt}$).
+  \item \textbf{Semiconductor}: same as insulator but with a small gap ($E_g \sim 0.1$--\SI{3}{\electronvolt}$), allowing thermal excitation of carriers.
+\end{itemize}
 
 \section{Experimental Band Structure}
 
 \subsection{Angle-Resolved Photoemission Spectroscopy (ARPES)}
-% Experimental: Asonen et al. 1982 (66 cit) -- ARPES of Cu alloy surfaces
-% Data: E(k) band structure images
+
+ARPES is the most direct experimental probe of the electronic band structure $E(\mathbf{k})$. A photon of known energy $h\nu$ ejects an electron from the crystal surface; by measuring the kinetic energy and emission angle of the photoelectron, both $E$ and $\mathbf{k}_\parallel$ of the initial state are determined:
+\begin{align}
+  E_{\text{binding}} &= h\nu - E_{\text{kin}} - \phi \\
+  \hbar k_\parallel &= \sqrt{2m E_{\text{kin}}} \sin\theta
+\end{align}
+
+Asonen et al.\ (1982) used ARPES to map the band structure of Cu alloy surfaces along the (100), (110), and (111) directions, directly resolving the $d$-bands and the $sp$-band of copper. Modern ARPES with synchrotron radiation achieves energy resolution of $\sim$\SI{1}{\milli\electronvolt} and momentum resolution of $\sim$\SI{0.01}{\per\angstrom}.
 
 \subsection{Band Gap Temperature Dependence}
-% Experimental: Passler 1999 (326 cit) -- Eg(T) for Si, Ge, GaAs, InSb, GaP, InP
-% Experimental: Passler 1996 (65 cit) -- Si indirect gap Varshni analysis
-% Data: Varshni parameters table for major semiconductors
+
+The band gap of a semiconductor decreases with increasing temperature due to lattice expansion and electron--phonon coupling. P\"assler (1999)~\cite{passler1999bandgap} compiled a comprehensive set of Varshni parameters for the empirical formula:
+\begin{equation}
+  E_g(T) = E_g(0) - \frac{\alpha T^2}{T + \beta}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Band gap parameters for major semiconductors. $E_g(0)$ is the zero-temperature gap; $\alpha$ and $\beta$ are Varshni parameters. Data from P\"assler (1999).}
+\label{tab:bandgap}
+\begin{tabular}{@{}lSlSS@{}}
+\toprule
+Material & {$E_g(0)$ (\si{\electronvolt})} & Type & {$\alpha$ ($10^{-4}$ \si{\electronvolt\per\kelvin})} & {$\beta$ (\si{\kelvin})} \\
+\midrule
+Si   & 1.170 & indirect & 4.73  & 636 \\
+Ge   & 0.744 & indirect & 4.77  & 235 \\
+GaAs & 1.519 & direct   & 5.41  & 204 \\
+InP  & 1.424 & direct   & 4.50  & 327 \\
+GaP  & 2.338 & indirect & 6.20  & 460 \\
+InSb & 0.235 & direct   & 3.20  & 170 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At room temperature (\SI{300}{\kelvin}): $E_g(\text{Si}) = \SI{1.12}{\electronvolt}$, $E_g(\text{Ge}) = \SI{0.66}{\electronvolt}$, $E_g(\text{GaAs}) = \SI{1.42}{\electronvolt}$.
 
 \section{Number of Orbitals in a Band}
-% Metals vs insulators distinction
+
+Each energy band in a crystal with $N$ primitive cells contains exactly $N$ allowed $\mathbf{k}$-values. Since each state can hold 2 electrons (spin up and down), a band accommodates $2N$ electrons. This counting rule is fundamental to understanding metals vs.\ insulators:
+\begin{itemize}[nosep]
+  \item Elements with an \textit{odd} number of electrons per primitive cell (Na, Cu, Al) are always metallic.
+  \item Elements with an \textit{even} number can be insulators or semiconductors \textit{if} the band gap is large enough (C, Si, Ge).
+\end{itemize}
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The semiconductor crystals---with their small band gaps, tunable carrier concentrations, and transformative technological applications---are the subject of the next chapter.}
