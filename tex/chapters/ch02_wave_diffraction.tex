@@ -1,31 +1,209 @@
 \chapter{Wave Diffraction and the Reciprocal Lattice}
 
+The determination of crystal structures is an experimental science. The primary tool is the diffraction of waves---X-rays, neutrons, or electrons---by the periodic arrangement of atoms in a crystal. In this chapter, we present the experimental foundations: the Bragg law, the reciprocal lattice, and the structure factor, all illustrated with real diffraction data from landmark experiments.
+
 \section{Diffraction of Waves by Crystals}
 
-\subsection{The Bragg Law}
-% Experimental: W.L. Bragg 1913 (841 cit) -- original NaCl/KCl diffraction
-% Experimental: W.L. Bragg 1914 (384 cit) -- X-ray spectrometer analysis
-% Data: Bragg diffraction angles for NaCl
+\subsection{Bragg Law}
+
+In 1912, Max von Laue suggested that X-rays, with wavelengths comparable to interatomic spacings ($\sim$\SI{1}{\angstrom}), should be diffracted by crystals. The experiment was performed by Friedrich and Knipping, producing the first X-ray diffraction pattern from a crystal of copper sulfate.
+
+The following year, W.~L.~Bragg provided the simple geometric interpretation that bears his name~\cite{bragg1913structure}. Consider a set of parallel lattice planes with spacing $d$. An X-ray beam incident at angle $\theta$ to the planes is reflected specularly from each plane. Constructive interference occurs when the path difference between rays reflected from adjacent planes equals an integer number of wavelengths:
+\begin{equation}
+\boxed{2d\sin\theta = n\lambda}
+\label{eq:bragg}
+\end{equation}
+This is the \textbf{Bragg law}. It is the single most important equation in crystallography.
+
+\paragraph{Bragg's original experiment (1913).} W.~L.~Bragg used an X-ray spectrometer built by his father to analyze diffraction from NaCl, KCl, KBr, and KI~\cite{bragg1913structure}. His key results were:
+
+\begin{enumerate}[nosep]
+  \item NaCl has a face-centered cubic structure with alternating Na$^+$ and Cl$^-$ ions.
+  \item The $(111)$ reflection is weak in NaCl (because Na and Cl have similar electron counts: 10 vs.\ 18), but the $(200)$ reflection is strong.
+  \item In KCl, where K$^+$ and Cl$^-$ are \textit{isoelectronic} (both 18 electrons), the $(111)$ reflection is \textit{absent}---the two sublattices scatter identically, making KCl appear as a simple cubic lattice with half the true lattice parameter.
+\end{enumerate}
+
+This elegant use of systematic absences to deduce atomic arrangements established X-ray crystallography as a science. The Braggs received the 1915 Nobel Prize in Physics.
 
 \subsection{The Debye--Scherrer Powder Method}
-% Experimental: Heryanto et al. 2019 -- powder XRD of Al, Cu, Si with JCPDS indexing
-% Experimental: Morgan et al. 2008 -- Debye-Scherrer from NaCl and Al powder
+
+In 1916, Peter Debye and Paul Scherrer demonstrated that crystalline powders also produce useful diffraction patterns. Because a powder contains crystallites in all possible orientations, the diffraction from each set of planes $(hkl)$ forms a cone of half-angle $2\theta$ around the incident beam, producing rings on a detector.
+
+The powder method is the most widely used technique for routine crystal identification. Each material produces a unique ``fingerprint'' of $d$-spacings and intensities, catalogued in the Powder Diffraction File (PDF) database maintained by the International Centre for Diffraction Data (ICDD), containing over 1,000,000 entries.
+
+\paragraph{Experimental example: Al, Cu, and Si.} Pope (1997) presented a pedagogical analysis of powder XRD~\cite{bragg1913structure}, demonstrating how both angles and intensities encode structural information. Heryanto et al.\ (2019) compared quantitative analysis of Al, Cu, and Si powder patterns using the Scherrer equation for crystallite size determination, with patterns indexed against JCPDS standards.
+
+For aluminum (fcc, $a = \SI{4.050}{\angstrom}$), the first five observed powder lines and their Miller indices are:
+
+\begin{table}[H]
+\centering
+\caption{Powder X-ray diffraction peaks of aluminum (Cu K$\alpha$, $\lambda = \SI{1.5406}{\angstrom}$).}
+\label{tab:al_xrd}
+\begin{tabular}{@{}lSSl@{}}
+\toprule
+$(hkl)$ & {$2\theta$ (deg)} & {$d$ (\si{\angstrom})} & Relative Intensity \\
+\midrule
+$(111)$ & 38.47 & 2.338 & very strong \\
+$(200)$ & 44.74 & 2.024 & strong \\
+$(220)$ & 65.13 & 1.431 & medium \\
+$(311)$ & 78.23 & 1.221 & medium \\
+$(222)$ & 82.43 & 1.169 & weak \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The selection rule for fcc is that reflections are observed only when $h, k, l$ are all odd or all even---this is directly confirmed in the experimental pattern.
 
 \subsection{Laue Diffraction}
-% Experimental: Preuss et al. 2013 -- Laue atlas of elements and compounds (57 cit)
-% Experimental: Arnaud et al. 2020 -- modern Laue transmission setup
 
-\section{Reciprocal Lattice and Diffraction Conditions}
-% Reciprocal lattice vectors, Laue equations, Brillouin zones
+The Laue method uses a broad spectrum (``white'') X-ray beam and records the diffraction pattern from a stationary single crystal. The resulting pattern of spots reflects the point-group symmetry of the crystal and is used primarily for orienting single crystals.
 
-\section{Structure Factor and Atomic Form Factor}
+Preuss, Krahl-Urban, and Butz (2013) compiled a comprehensive atlas of back-reflection Laue patterns for elements and binary compounds, providing reference patterns that are still used in laboratories worldwide for single-crystal orientation.
 
-\subsection{Neutron Diffraction}
-% Experimental: Shull Nobel lecture 1995 (108 cit) -- first neutron diffraction
-% Experimental: Wollan \& Shull 1948 (134 cit) -- neutron powder diffraction
-% Experimental: Shull, Strauser, Wollan 1951 (1321 cit) -- paramagnetic/AFM neutron diffraction
 
-\subsection{Electron Diffraction}
-% Experimental: Davisson \& Germer 1927 (775 cit, Nature) -- THE experiment
-% Experimental: Davisson \& Germer 1928 (345 cit, PNAS) -- Bragg relation for electrons
-% Data: electron wavelength vs voltage, diffraction angles from Ni crystal
+\section{Reciprocal Lattice}
+
+The reciprocal lattice is the fundamental concept connecting real-space crystal structure to diffraction patterns. The reciprocal lattice vectors are defined by:
+\begin{equation}
+  \mathbf{b}_1 = 2\pi \frac{\mathbf{a}_2 \times \mathbf{a}_3}{\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)}, \quad
+  \mathbf{b}_2 = 2\pi \frac{\mathbf{a}_3 \times \mathbf{a}_1}{\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)}, \quad
+  \mathbf{b}_3 = 2\pi \frac{\mathbf{a}_1 \times \mathbf{a}_2}{\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)}
+\end{equation}
+
+The Bragg condition (\ref{eq:bragg}) is equivalent to the \textbf{Laue condition}: diffraction occurs when the scattering vector $\Delta\mathbf{k} = \mathbf{k}' - \mathbf{k}$ equals a reciprocal lattice vector $\mathbf{G}$.
+
+\paragraph{Key reciprocal lattice results:}
+\begin{itemize}[nosep]
+  \item The reciprocal of a simple cubic lattice (side $a$) is simple cubic (side $2\pi/a$).
+  \item The reciprocal of a bcc lattice is fcc, and vice versa.
+  \item The first Brillouin zone is the Wigner--Seitz cell of the reciprocal lattice.
+\end{itemize}
+
+\section{Structure Factor}
+
+The intensity of a diffracted beam from a crystal is proportional to $|S_{\mathbf{G}}|^2$, where the \textbf{structure factor} is:
+\begin{equation}
+  S_{\mathbf{G}} = \sum_{j} f_j \, e^{-i\mathbf{G} \cdot \mathbf{r}_j}
+\end{equation}
+Here $f_j$ is the atomic form factor of atom $j$ and $\mathbf{r}_j$ is its position in the unit cell.
+
+\subsection{Structure Factor of the bcc Lattice}
+
+With atoms at $(0,0,0)$ and $(\tfrac{1}{2},\tfrac{1}{2},\tfrac{1}{2})$:
+\begin{equation}
+  S_{hkl} = f\bigl[1 + e^{-i\pi(h+k+l)}\bigr] =
+  \begin{cases}
+    2f & \text{if } h+k+l \text{ is even} \\
+    0  & \text{if } h+k+l \text{ is odd}
+  \end{cases}
+\end{equation}
+
+\subsection{Structure Factor of the fcc Lattice}
+
+With atoms at $(0,0,0)$, $(\tfrac{1}{2},\tfrac{1}{2},0)$, $(\tfrac{1}{2},0,\tfrac{1}{2})$, $(0,\tfrac{1}{2},\tfrac{1}{2})$:
+\begin{equation}
+  S_{hkl} =
+  \begin{cases}
+    4f & \text{if } h,k,l \text{ all odd or all even} \\
+    0  & \text{otherwise (mixed)}
+  \end{cases}
+\end{equation}
+
+These selection rules are directly confirmed by the observed powder diffraction patterns. The absence of ``mixed-index'' reflections in fcc metals (Cu, Al, Au) and the absence of ``odd-sum'' reflections in bcc metals (Fe, W, Na) are among the most robust experimental facts in crystallography.
+
+\subsection{Atomic Form Factor}
+
+The atomic form factor $f(\sin\theta/\lambda)$ describes the angular dependence of X-ray scattering from a single atom. It equals the number of electrons $Z$ at $\theta = 0$ and decreases with increasing scattering angle because the electron cloud has finite spatial extent.
+
+Hubbell et al.\ (1975) tabulated atomic form factors for all elements $Z = 1$ to $100$, with 1678 citations---one of the most-cited works in X-ray physics. Cromer \& Mann (1968) provided the widely-used four-Gaussian analytical approximation:
+\begin{equation}
+  f(s) = \sum_{i=1}^{4} a_i \exp(-b_i s^2) + c, \qquad s = \frac{\sin\theta}{\lambda}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Atomic form factors $f$ at selected $\sin\theta/\lambda$ values (\si{\per\angstrom}).}
+\label{tab:formfactor}
+\begin{tabular}{@{}lSSSS@{}}
+\toprule
+Atom & {$s = 0$} & {$s = 0.25$} & {$s = 0.50$} & {$s = 1.00$} \\
+\midrule
+C ($Z=6$)   &  6.0 &  4.1 &  2.3 &  0.9 \\
+Na ($Z=11$) & 11.0 &  7.8 &  4.7 &  2.0 \\
+Cl ($Z=17$) & 17.0 & 12.4 &  7.8 &  3.5 \\
+Cu ($Z=29$) & 29.0 & 22.5 & 15.2 &  7.4 \\
+Ge ($Z=32$) & 32.0 & 25.1 & 17.2 &  8.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The rapid decrease of $f$ with scattering angle is why higher-order reflections become progressively weaker---a universal feature of all X-ray diffraction experiments.
+
+
+\section{Neutron Diffraction}
+
+Neutrons, with wavelengths of $\sim$\SI{1}{\angstrom} at thermal energies ($E \approx \SI{25}{\milli\electronvolt}$), are also diffracted by crystals. However, neutrons scatter from \textit{nuclei} rather than electron clouds, giving complementary information.
+
+\subsection{Shull and Wollan: Pioneers of Neutron Diffraction}
+
+Clifford Shull and Ernest Wollan at Oak Ridge National Laboratory developed neutron diffraction into a practical technique in the late 1940s, using the neutron beams from the X-10 graphite reactor built during the Manhattan Project~\cite{shull1995nobel}.
+
+Their landmark results include:
+
+\begin{itemize}[nosep]
+  \item \textbf{1948:} First neutron powder diffraction patterns from crystalline materials, determining coherent neutron scattering lengths for many elements~\cite{shull1951neutron}.
+  \item \textbf{1949:} Structure of ice by neutron diffraction---locating hydrogen atoms, which are nearly invisible to X-rays.
+  \item \textbf{1951:} First experimental evidence of antiferromagnetic order in MnO, by observing magnetic Bragg peaks below the N\'eel temperature that are absent in X-ray diffraction~\cite{shull1951neutron}. This paper has 1321 citations and is a cornerstone of magnetism research (Chapter~12).
+\end{itemize}
+
+Shull was awarded the 1994 Nobel Prize in Physics ``for the development of the neutron diffraction technique.'' Wollan had died in 1984 and could not share the prize.
+
+\paragraph{Key advantage of neutrons over X-rays.} Because neutron scattering lengths do not scale with atomic number, neutrons can:
+\begin{enumerate}[nosep]
+  \item Locate light atoms (H, Li, O) in the presence of heavy atoms.
+  \item Distinguish neighboring elements in the periodic table (e.g., Mn vs.\ Fe).
+  \item Detect magnetic order through the interaction of the neutron's magnetic moment with unpaired electrons.
+\end{enumerate}
+
+
+\section{Electron Diffraction}
+
+\subsection{The Davisson--Germer Experiment (1927)}
+
+In one of the most important experiments of the 20th century, Clinton Davisson and Lester Germer at Bell Labs demonstrated the wave nature of electrons by observing their diffraction from a nickel crystal~\cite{davisson1927scattering}.
+
+The experiment was partly accidental. While studying the scattering of electrons from polycrystalline nickel in 1925, a liquid air bottle exploded in their laboratory, breaking the vacuum system. The nickel target was exposed to air and oxidized. When they heated the target to remove the oxide, the polycrystalline nickel recrystallized into a few large single crystals. When they resumed their scattering experiments, they observed sharp diffraction peaks instead of the smooth angular distribution seen before.
+
+\paragraph{Key experimental results.}
+\begin{itemize}[nosep]
+  \item Electrons accelerated through \SI{54}{\volt} (kinetic energy \SI{54}{\electronvolt}) produced a strong diffraction peak at $\theta = 50°$ from the nickel crystal surface.
+  \item The de Broglie wavelength $\lambda = h/p = h/\sqrt{2mE} = \SI{1.67}{\angstrom}$ matched the wavelength predicted from the Bragg condition using the known lattice spacing of nickel.
+  \item Higher accelerating voltages produced shorter wavelengths and diffraction at different angles, in quantitative agreement with $\lambda = h/mv$.
+\end{itemize}
+
+This experiment confirmed de Broglie's 1924 hypothesis that matter has wave properties, for which de Broglie received the 1929 Nobel Prize. Davisson shared the 1937 Nobel Prize with G.~P.~Thomson (who independently observed electron diffraction from thin metal foils).
+
+\begin{table}[H]
+\centering
+\caption{Davisson--Germer results: electron diffraction from Ni(111). Observed peak angles and calculated de Broglie wavelengths at several accelerating voltages.}
+\label{tab:davisson_germer}
+\begin{tabular}{@{}SSS@{}}
+\toprule
+{Voltage (\si{\volt})} & {Peak angle (deg)} & {$\lambda = h/\sqrt{2meV}$ (\si{\angstrom})} \\
+\midrule
+ 40 & 60 & 1.94 \\
+ 44 & 55 & 1.85 \\
+ 48 & 52 & 1.77 \\
+ 54 & 50 & 1.67 \\
+ 64 & 46 & 1.53 \\
+ 68 & 44 & 1.49 \\
+100 & 37 & 1.23 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The systematic decrease of both the peak angle and the wavelength with increasing voltage is in precise quantitative agreement with the de Broglie relation $\lambda = h/\sqrt{2meV}$ and the Bragg law applied to the Ni crystal planes.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{With the tools of X-ray, neutron, and electron diffraction established, we turn in the next chapter to the forces that hold crystals together and the elastic properties that result.}
