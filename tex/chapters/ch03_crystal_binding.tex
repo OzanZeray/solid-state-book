@@ -1,37 +1,208 @@
 \chapter{Crystal Binding and Elastic Constants}
 
+Why do atoms form crystals? The answer lies in the lowering of total energy when atoms come together in an ordered arrangement. The nature of the binding force determines the crystal structure, the cohesive energy, and the elastic properties. In this chapter, we present experimental data on all major types of crystal binding and the elastic constants that characterize the mechanical response of crystals.
+
 \section{Crystals of Inert Gases}
-% Experimental: Anderson \& Swenson 1975 (233 cit) -- EOS for Ar, Kr, Xe
-% Experimental: Boato \& Casanova 1961 -- LJ parameters for Ne, Ar, Kr, Xe
-% Data: cohesive energy table, equilibrium lattice constants
+
+The noble gas solids (Ne, Ar, Kr, Xe) are the simplest crystals: they are bound entirely by the weak van der Waals interaction. All crystallize in the fcc structure.
 
 \subsection{Van der Waals--London Interaction}
-% Lennard-Jones 6-12 potential fits to experimental data
-% Experimental: Schwerdtfeger et al. 2006 (171 cit) -- many-body LJ analysis
+
+The attractive interaction between two neutral atoms arises from correlated fluctuations of their electron clouds, giving a potential that varies as $-1/r^6$. Combined with a short-range repulsive term (due to Pauli exclusion), the total interaction is well described by the \textbf{Lennard-Jones potential}:
+\begin{equation}
+  U(r) = 4\varepsilon\left[\left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^{6}\right]
+\end{equation}
+where $\varepsilon$ is the depth of the potential well and $\sigma$ is the distance at which $U = 0$.
+
+\paragraph{Experimental verification.} Boato and Casanova (1961) determined a self-consistent set of Lennard-Jones parameters for all four heavier noble gases from experimental data on second virial coefficients, viscosity, and crystal properties. Anderson and Swenson (1975) measured the equations of state of solid Ar, Kr, and Xe under pressure using piston-displacement techniques, providing definitive cohesive energy and bulk modulus data.
+
+\begin{table}[H]
+\centering
+\caption{Experimental properties of noble gas solids (fcc structure, extrapolated to $T = \SI{0}{\kelvin}$). Lennard-Jones parameters from Boato \& Casanova (1961); cohesive energies from Anderson \& Swenson (1975).}
+\label{tab:noble_gas}
+\begin{tabular}{@{}lSSSSSS@{}}
+\toprule
+ & {$\varepsilon/k_B$ (\si{\kelvin})} & {$\sigma$ (\si{\angstrom})} & {$a$ (\si{\angstrom})} & {$R_{\text{nn}}$ (\si{\angstrom})} & {$E_{\text{coh}}$ (\si{\milli\electronvolt})} & {$B$ (\si{\giga\pascal})} \\
+\midrule
+Ne & 35.7  & 2.789 & 4.464 & 3.156 & 20   & 1.1 \\
+Ar & 119.8 & 3.405 & 5.311 & 3.755 & 80   & 2.7 \\
+Kr & 164.0 & 3.624 & 5.646 & 3.992 & 116  & 3.5 \\
+Xe & 230.0 & 3.963 & 6.129 & 4.334 & 170  & 3.6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Here $R_{\text{nn}} = a/\sqrt{2}$ is the nearest-neighbor distance in the fcc structure, and $E_{\text{coh}}$ is the cohesive energy per atom (energy to dissociate the crystal into isolated atoms). The cohesive energies are very small compared to ionic or covalent crystals---this is why noble gas solids melt at low temperatures.
+
+\paragraph{Theory vs.\ experiment.} The Lennard-Jones model with parameters from gas-phase data predicts the lattice constant and cohesive energy of the solid to within a few percent for Ar, Kr, and Xe. For Ne, quantum zero-point motion causes a 3\% expansion beyond the classical prediction. Schwerdtfeger et al.\ (2006) showed that many-body corrections beyond the pair potential improve the agreement for all noble gases.
+
 
 \section{Ionic Crystals}
 
 \subsection{Electrostatic or Madelung Energy}
-% Experimental: Sherman 1932 (298 cit) -- crystal energies, Madelung constant
-% Data: Mestechkin 2000 -- 200+ Madelung constants tabulated
-% Data: Glasser 2012 (76 cit) -- Madelung energies compilation
+
+The dominant contribution to the cohesive energy of an ionic crystal is the electrostatic (Madelung) energy. For a crystal of $N$ ion pairs with charges $\pm q$ separated by nearest-neighbor distance $R$, the total electrostatic energy is:
+\begin{equation}
+  U_{\text{Madelung}} = -\frac{N\alpha q^2}{4\pi\varepsilon_0 R}
+\end{equation}
+where $\alpha$ is the \textbf{Madelung constant}, a dimensionless number that depends only on the crystal structure.
+
+\begin{table}[H]
+\centering
+\caption{Madelung constants for common crystal structures. Values from Mestechkin (2000), who tabulated over 200 Madelung constants.}
+\label{tab:madelung}
+\begin{tabular}{@{}lSl@{}}
+\toprule
+Structure & {Madelung constant $\alpha$} & Example \\
+\midrule
+NaCl (B1)           & 1.7476 & NaCl, MgO, LiF \\
+CsCl (B2)           & 1.7627 & CsCl, CsBr \\
+Zinc blende (B3)    & 1.6381 & ZnS, GaAs \\
+Wurtzite (B4)       & 1.6413 & ZnO, AlN \\
+Fluorite            & 2.5194 & CaF$_2$, UO$_2$ \\
+Rutile              & 2.408  & TiO$_2$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Note that the CsCl structure has a slightly higher Madelung constant than NaCl, meaning it would be electrostatically preferred. The reason most alkali halides adopt the NaCl structure is the balance between Madelung energy and the short-range repulsive energy, which depends on the ionic radius ratio (Chapter~1).
+
+\subsection{Cohesive Energy of Ionic Crystals}
+
+The total cohesive energy per ion pair, including the repulsive interaction, is given by the \textbf{Born--Mayer} equation:
+\begin{equation}
+  U(R) = -\frac{\alpha q^2}{4\pi\varepsilon_0 R} + B\,e^{-R/\rho}
+\end{equation}
+At equilibrium ($dU/dR = 0$), this gives the lattice energy. Sherman (1932) performed one of the earliest systematic comparisons of calculated and experimental lattice energies for ionic crystals, finding agreement within 1--2\%.
+
+\begin{table}[H]
+\centering
+\caption{Experimental lattice energies of alkali halides (\si{\kilo\joule\per\mole}), compared with Born--Mayer calculations.}
+\label{tab:lattice_energy}
+\begin{tabular}{@{}lSSS@{}}
+\toprule
+Crystal & {Expt. (Born--Haber)} & {Calc. (Born--Mayer)} & {Difference (\%)} \\
+\midrule
+LiF  & 1037 & 1030 & 0.7 \\
+NaCl &  786 &  778 & 1.0 \\
+KCl  &  715 &  709 & 0.8 \\
+KBr  &  682 &  674 & 1.2 \\
+RbCl &  689 &  681 & 1.2 \\
+CsCl &  657 &  649 & 1.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The remarkable agreement (within $\sim$1\%) between the Born--Haber cycle (purely experimental thermodynamic data) and the Born--Mayer electrostatic model validates the ionic picture of these crystals.
+
+
+\section{Covalent Crystals}
+
+In covalent crystals (diamond, Si, Ge), atoms share electrons in directed bonds. The cohesive energies are much larger than in van der Waals crystals and comparable to ionic crystals:
+
+\begin{table}[H]
+\centering
+\caption{Cohesive energies of covalent and metallic crystals.}
+\label{tab:covalent}
+\begin{tabular}{@{}lSl@{}}
+\toprule
+Crystal & {$E_{\text{coh}}$ (\si{\electronvolt}/atom)} & Bonding type \\
+\midrule
+C (diamond) & 7.37  & covalent \\
+Si          & 4.63  & covalent \\
+Ge          & 3.85  & covalent \\
+SiC         & 6.34  & covalent \\
+\midrule
+Na          & 1.11  & metallic \\
+Cu          & 3.49  & metallic \\
+Fe          & 4.28  & metallic \\
+W           & 8.90  & metallic \\
+\midrule
+NaCl        & 3.28  & ionic (per ion pair) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 \section{Elastic Constants}
 
-\subsection{Ultrasonic Measurements}
-% Experimental: Huntington 1947 (211 cit) -- pioneering ultrasonic method
-% Experimental: Overton \& Gaffney 1955 (636 cit) -- Cu elastic constants vs T
-% Experimental: Ledbetter \& Naimon 1974 (365 cit) -- comprehensive Cu data
-% Data: c11, c12, c44 table for cubic crystals
+The elastic properties of a crystal describe its response to small deformations. For a cubic crystal, there are three independent elastic stiffness constants: $c_{11}$, $c_{12}$, and $c_{44}$.
 
-\subsection{Elastic Constants of Alkali Halides}
-% Experimental: Lewis et al. 1967 (331 cit) -- all alkali halides at 4.2K
-% Data: complete elastic constants table
+\subsection{Ultrasonic Measurement of Elastic Constants}
+
+The standard experimental method is to measure the velocity of ultrasonic waves propagating along specific crystallographic directions. Huntington (1947) pioneered this technique for cubic crystals. The key relations are:
+
+\begin{itemize}[nosep]
+  \item \textbf{[100] longitudinal:} $\rho v^2 = c_{11}$
+  \item \textbf{[100] transverse:} $\rho v^2 = c_{44}$
+  \item \textbf{[110] longitudinal:} $\rho v^2 = \tfrac{1}{2}(c_{11} + c_{12} + 2c_{44})$
+  \item \textbf{[110] transverse (polarized [1$\bar{1}$0]):} $\rho v^2 = \tfrac{1}{2}(c_{11} - c_{12})$
+\end{itemize}
+
+\paragraph{Copper: the most-studied metal.} Overton and Gaffney (1955) performed the definitive ultrasonic measurement of copper's elastic constants from \SI{4.2}{\kelvin} to \SI{300}{\kelvin}~\cite{overton1955elastic}. Their work (636 citations) remains the standard reference. Ledbetter and Naimon (1974) published a comprehensive review of all available Cu elastic data.
+
+\begin{table}[H]
+\centering
+\caption{Elastic stiffness constants of selected cubic crystals at room temperature (\SI{e10}{\newton\per\metre\squared} = \SI{e10}{\pascal}). Data from Overton \& Gaffney (1955) for Cu; Lewis et al.\ (1967) for alkali halides~\cite{lewis1967elastic}; various sources for others.}
+\label{tab:elastic}
+\begin{tabular}{@{}lSSSS@{}}
+\toprule
+Crystal & {$c_{11}$} & {$c_{12}$} & {$c_{44}$} & {$A = 2c_{44}/(c_{11}-c_{12})$} \\
+\midrule
+Cu     & 16.84 & 12.14 & 7.54  & 3.21 \\
+Al     & 10.82 &  6.13 & 2.85  & 1.21 \\
+Au     & 18.60 & 15.70 & 4.20  & 2.90 \\
+Fe     & 23.10 & 13.50 & 11.60 & 2.42 \\
+W      & 52.33 & 20.45 & 16.07 & 1.01 \\
+\midrule
+NaCl   &  4.87 &  1.24 &  1.26 & 0.69 \\
+KCl    &  4.07 &  0.71 &  0.63 & 0.37 \\
+LiF    & 11.12 &  4.20 &  6.28 & 1.82 \\
+MgO    & 29.71 &  9.54 & 15.57 & 1.54 \\
+\midrule
+Si     & 16.58 &  6.39 &  7.96 & 1.56 \\
+Ge     & 12.89 &  4.83 &  6.71 & 1.66 \\
+Diamond& 107.6 & 12.50 & 57.74 & 1.21 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The \textbf{anisotropy ratio} $A = 2c_{44}/(c_{11} - c_{12})$ measures the departure from elastic isotropy ($A = 1$). Tungsten is nearly isotropic ($A = 1.01$), while copper is strongly anisotropic ($A = 3.21$). The alkali halides KCl and NaCl are anisotropic in the opposite sense ($A < 1$).
 
 \subsection{Bulk Modulus and Compressibility}
-% Experimental: Slater 1924 (120 cit) -- first compressibility of alkali halides
-% Reference: Sirdeshmukh 2001 (247 cit) -- Alkali Halides handbook
 
-\section{Elastic Waves in Cubic Crystals}
-% Waves in [100] and [110] directions
-% Connection between elastic constants and wave velocities
+The bulk modulus for a cubic crystal is:
+\begin{equation}
+  B = \frac{c_{11} + 2c_{12}}{3}
+\end{equation}
+
+Slater (1924) performed the first compressibility measurements on alkali halides, establishing the experimental basis for comparing with the ionic model. His data showed that compressibility increases with increasing lattice constant---softer crystals have larger ions.
+
+\begin{table}[H]
+\centering
+\caption{Bulk modulus of selected materials (\si{\giga\pascal}).}
+\label{tab:bulk}
+\begin{tabular}{@{}lSl@{}}
+\toprule
+Material & {$B$ (\si{\giga\pascal})} & Notes \\
+\midrule
+Diamond  & 443 & hardest known material \\
+W        & 310 & highest among metals \\
+MgO      & 160 & hard ionic crystal \\
+Fe       & 167 & \\
+Cu       & 137 & \\
+Al       &  76 & \\
+Si       &  98 & \\
+NaCl     &  24 & \\
+KCl      &  18 & \\
+Na       &   6.3 & softest cubic metal \\
+Xe (solid) & 3.6 & van der Waals crystal \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The bulk modulus spans nearly two orders of magnitude, from diamond (\SI{443}{\giga\pascal}) to solid xenon (\SI{3.6}{\giga\pascal}), directly reflecting the strength of the interatomic bonds: covalent $>$ metallic $>$ ionic $>$ van der Waals.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The lattice vibrations that arise from these interatomic forces, and the thermal properties that follow from them, are the subject of the next two chapters.}
