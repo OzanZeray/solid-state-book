@@ -1,20 +1,98 @@
 \chapter{Dielectrics and Ferroelectrics}
 
+Dielectric materials---insulators that can be polarized by an electric field---are fundamental to capacitors, piezoelectric devices, and nonlinear optics. Ferroelectrics, which exhibit spontaneous polarization analogous to the spontaneous magnetization of ferromagnets, undergo structural phase transitions with dramatic changes in their dielectric properties.
+
 \section{Dielectric Constant and Polarizability}
-% Macroscopic electric field, Lorentz field, Clausius-Mossotti
+
+The static dielectric constant $\varepsilon_0$ relates the electric displacement to the applied field. The Clausius--Mossotti relation connects the macroscopic dielectric constant to the microscopic polarizability $\alpha$:
+\begin{equation}
+  \frac{\varepsilon - 1}{\varepsilon + 2} = \frac{n\alpha}{3\varepsilon_0}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Static and high-frequency dielectric constants of selected crystals.}
+\label{tab:dielectric}
+\begin{tabular}{@{}lSS@{}}
+\toprule
+Crystal & {$\varepsilon_0$ (static)} & {$\varepsilon_\infty$ (optical)} \\
+\midrule
+NaCl    & 5.90  & 2.25 \\
+KCl     & 4.85  & 2.13 \\
+MgO     & 9.83  & 2.95 \\
+SiO$_2$ & 3.8   & 2.10 \\
+Al$_2$O$_3$ & 9.4 & 3.1 \\
+Si      & 11.7  & {--} \\
+Ge      & 16.0  & {--} \\
+GaAs    & 12.9  & 10.9 \\
+\midrule
+BaTiO$_3$ (above $T_C$) & {$>$1000} & 5.1 \\
+SrTiO$_3$ (\SI{4}{\kelvin}) & {$>$20000} & 5.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The enormous static dielectric constants of BaTiO$_3$ and SrTiO$_3$ near their phase transitions are a hallmark of ferroelectric and incipient ferroelectric behavior.
+
 
 \section{Ferroelectric Crystals}
 
+A ferroelectric crystal has a spontaneous electric polarization $\mathbf{P}_s$ that can be reversed by an applied electric field. The most studied ferroelectric is barium titanate, BaTiO$_3$.
+
 \subsection{BaTiO$_3$ Phase Transitions}
-% Experimental: Samara 1971 (307 cit) -- epsilon(T) through phase transitions, pressure dependence
-% Data: dielectric constant peak at Tc
+
+BaTiO$_3$ undergoes three structural phase transitions:
+\begin{enumerate}[nosep]
+  \item Cubic $\to$ tetragonal at \SI{393}{\kelvin} (Curie temperature)
+  \item Tetragonal $\to$ orthorhombic at \SI{278}{\kelvin}
+  \item Orthorhombic $\to$ rhombohedral at \SI{183}{\kelvin}
+\end{enumerate}
+
+Samara (1971) measured the dielectric constant of BaTiO$_3$ as a function of temperature and pressure. At the Curie point, $\varepsilon$ reaches values exceeding 10,000. Above $T_C$, the Curie--Weiss law gives:
+\begin{equation}
+  \varepsilon = \frac{C}{T - T_0}
+\end{equation}
+with Curie constant $C \approx \SI{1.7e5}{\kelvin}$.
 
 \subsection{P--E Hysteresis}
-% Experimental: Thomas et al. 2001 (148 cit) -- BaTiO3 thin film hysteresis loops
-% Data: polarization vs electric field curves
+
+The signature of a ferroelectric is the \textbf{polarization--electric field (P--E) hysteresis loop}, analogous to the B--H loop of a ferromagnet. Thomas et al.\ (2001) measured P--E loops of BaTiO$_3$ thin films, showing:
+\begin{itemize}[nosep]
+  \item Remanent polarization $P_r \approx \SI{10}{\micro\coulomb\per\centi\metre\squared}$ (thin film)
+  \item Coercive field $E_c \approx \SI{50}{\kilo\volt\per\centi\metre}$
+  \item Single crystal values: $P_s = \SI{26}{\micro\coulomb\per\centi\metre\squared}$
+\end{itemize}
 
 \section{Soft Optical Phonons}
-% Phonon frequency approaching zero near Tc
+
+The ferroelectric transition is driven by a transverse optical phonon whose frequency decreases toward zero as $T \to T_C$ from above (``softening''). This \textbf{soft mode} concept was proposed independently by Cochran and Anderson in 1960.
+
+At $T = T_C$, the restoring force for the soft mode vanishes, and the crystal distorts spontaneously to the lower-symmetry ferroelectric phase.
 
 \section{Piezoelectricity}
-% Data: piezoelectric coefficient table
+
+Piezoelectric crystals develop an electric polarization when subjected to mechanical stress (direct effect) and deform when an electric field is applied (converse effect). Ferroelectric materials are always piezoelectric (but not vice versa).
+
+\begin{table}[H]
+\centering
+\caption{Piezoelectric strain coefficient $d_{33}$ (\si{\pico\coulomb\per\newton}) for selected materials.}
+\label{tab:piezo}
+\begin{tabular}{@{}lS@{}}
+\toprule
+Material & {$d_{33}$ (\si{\pico\coulomb\per\newton})} \\
+\midrule
+Quartz (SiO$_2$) & 2.3 \\
+ZnO              & 12 \\
+BaTiO$_3$        & 190 \\
+PZT (Pb(Zr,Ti)O$_3$) & 300{--}600 \\
+PMN-PT           & 1500{--}2500 \\
+PVDF (polymer)   & 33 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+PZT is the dominant piezoelectric material in engineering applications (sonar, actuators, sensors). The relaxor ferroelectric PMN-PT achieves extraordinary $d_{33}$ values exceeding \SI{2000}{\pico\coulomb\per\newton}.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{We now move to the physics of surfaces and interfaces, where the broken periodicity gives rise to new phenomena.}

@@ -1,24 +1,83 @@
 \chapter{Diamagnetism and Paramagnetism}
 
+All materials respond to magnetic fields. Diamagnets are repelled (negative susceptibility); paramagnets are attracted (positive susceptibility). These responses, though typically weak, provide fundamental information about electronic structure.
+
 \section{Langevin Diamagnetism}
-% Data: diamagnetic susceptibility table
 
-\section{Paramagnetism}
+All atoms have a diamagnetic response arising from the orbital motion of electrons in the applied field. The Langevin result for the molar diamagnetic susceptibility is:
+\begin{equation}
+  \chi_{\text{dia}} = -\frac{N_A \mu_0 Z e^2}{6m_e}\langle r^2 \rangle
+\end{equation}
 
-\subsection{Quantum Theory of Paramagnetism}
-% Experimental: Penney \& Schlapp 1932 (267 cit) -- crystal field effects on rare earth susceptibilities
-% Data: chi vs T (Curie law fits)
+\begin{table}[H]
+\centering
+\caption{Molar diamagnetic susceptibilities ($10^{-6}$ \si{\centi\metre\cubed\per\mole}) of selected atoms and ions.}
+\label{tab:diamag}
+\begin{tabular}{@{}lSlS@{}}
+\toprule
+Species & {$\chi_{\text{dia}}$} & Species & {$\chi_{\text{dia}}$} \\
+\midrule
+He    & -1.9  & Cu$^+$  & -12 \\
+Ne    & -7.2  & Ge      & -76 \\
+Ar    & -19.3 & Si      & -13 \\
+Kr    & -28.0 & NaCl    & -30 \\
+Xe    & -43.0 & Diamond & -5.9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Diamagnetic susceptibilities increase with atomic number (larger $\langle r^2 \rangle$), as clearly seen in the noble gas series.
+
+
+\section{Quantum Theory of Paramagnetism}
+
+For atoms with permanent magnetic moments (unpaired electrons), the paramagnetic susceptibility follows the \textbf{Curie law}:
+\begin{equation}
+  \chi = \frac{C}{T} = \frac{N \mu_0 p^2 \mu_B^2}{3k_BT}, \qquad p = g\sqrt{J(J+1)}
+\end{equation}
+where $p$ is the effective number of Bohr magnetons.
 
 \subsection{Rare Earth Ions}
-% Experimental: Guertin et al. 1973 (48 cit) -- effective magnetic moment table for RE in Pd
-% Data: p_eff calculated vs measured for 4f ions (Hund rules)
 
-\subsection{Crystal Field Splitting}
-% Iron group ions: deviation from free-ion values
-% Quenching of orbital angular momentum
+The rare earth (4$f$) ions provide the most dramatic test of the quantum theory of paramagnetism, because the 4$f$ electrons are well shielded from the crystal environment and the free-ion values of $J$ apply.
 
-\section{Cooling by Isentropic Demagnetization}
-% Adiabatic demagnetization technique
+\begin{table}[H]
+\centering
+\caption{Effective magnetic moments $p_{\text{eff}}$ of trivalent rare earth ions (in Bohr magnetons). Comparison of calculated values (Hund's rules) with experiment. Data from Guertin et al.\ (1973).}
+\label{tab:rare_earth}
+\begin{tabular}{@{}llSlSS@{}}
+\toprule
+Ion & Config. & {$J$} & $g$ & {$p_{\text{calc}}$} & {$p_{\text{exp}}$} \\
+\midrule
+Ce$^{3+}$ & $4f^1$  & 5/2 & 6/7  & 2.54 & 2.4 \\
+Pr$^{3+}$ & $4f^2$  & 4   & 4/5  & 3.58 & 3.5 \\
+Nd$^{3+}$ & $4f^3$  & 9/2 & 8/11 & 3.62 & 3.5 \\
+Sm$^{3+}$ & $4f^5$  & 5/2 & 2/7  & 0.84 & 1.5 \\
+Gd$^{3+}$ & $4f^7$  & 7/2 & 2    & 7.94 & 8.0 \\
+Dy$^{3+}$ & $4f^9$  & 15/2 & 4/3 & 10.63 & 10.6 \\
+Er$^{3+}$ & $4f^{11}$ & 15/2 & 6/5 & 9.59 & 9.5 \\
+Yb$^{3+}$ & $4f^{13}$ & 7/2 & 8/7 & 4.54 & 4.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The agreement between Hund's rules and experiment is remarkable for most rare earths. The notable exception is Sm$^{3+}$, where the calculated and experimental values disagree due to the small energy gap between the $J = 5/2$ ground state and the $J = 7/2$ excited state (Van Vleck paramagnetism).
+
+\subsection{Iron Group Ions and Crystal Field Splitting}
+
+For the 3$d$ (iron group) ions, the 3$d$ electrons are \textit{not} shielded from the crystal field and the orbital angular momentum is often ``quenched.'' Penney and Schlapp (1932)~\cite{penney1932crystal} provided the first theoretical treatment of crystal field effects on rare earth and iron group susceptibilities.
+
+In octahedral coordination, the orbital contribution to the magnetic moment is reduced, and the effective moment is closer to the ``spin-only'' value $p = 2\sqrt{S(S+1)}$ rather than the free-ion value.
 
 \section{Paramagnetic Susceptibility of Conduction Electrons}
-% Pauli paramagnetism
+
+The conduction electrons in a metal contribute a temperature-independent \textbf{Pauli paramagnetic susceptibility}:
+\begin{equation}
+  \chi_{\text{Pauli}} = \mu_0 \mu_B^2 D(E_F)
+\end{equation}
+
+This is much smaller than the Curie paramagnetism of localized moments because only electrons within $\sim k_BT$ of $E_F$ can flip their spin. For typical metals, $\chi_{\text{Pauli}} \sim 10^{-6}$, comparable in magnitude to the diamagnetic susceptibility.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{We now turn to ferromagnetism and antiferromagnetism---the cooperative magnetic states where interactions between moments produce spontaneous order.}

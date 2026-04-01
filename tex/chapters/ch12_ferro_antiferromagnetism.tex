@@ -1,27 +1,105 @@
 \chapter{Ferromagnetism and Antiferromagnetism}
 
+In ferromagnets, the magnetic moments of neighboring atoms align parallel, producing spontaneous magnetization below the Curie temperature. In antiferromagnets, neighboring moments align antiparallel. This chapter presents the experimental evidence for these cooperative magnetic states.
+
 \section{Ferromagnetic Order}
 
-\subsection{Saturation Magnetization vs Temperature}
-% Experimental: Oliver \& Sucksmith 1953 (30 cit) -- M(T) for Ni alloys
-% Experimental: Sucksmith et al. 1953 (35 cit) -- M(T) measurement techniques for Fe, Ni, Co
-% Data: M(T)/M(0) vs T/Tc compared with Brillouin function
+\subsection{Curie Temperature and Saturation Magnetization}
 
-\section{Neutron Magnetic Scattering}
+\begin{table}[H]
+\centering
+\caption{Ferromagnetic elements: Curie temperature, saturation magnetization at $T = 0$, and magnetic moment per atom.}
+\label{tab:ferromagnets}
+\begin{tabular}{@{}lSSSl@{}}
+\toprule
+Element & {$T_C$ (\si{\kelvin})} & {$M_s(0)$ (\si{\kilo\ampere\per\metre})} & {$\mu/\mu_B$} & Structure \\
+\midrule
+Fe  & 1043 & 1752 & 2.22 & bcc \\
+Co  & 1394 & 1446 & 1.72 & hcp \\
+Ni  &  631 &  510 & 0.60 & fcc \\
+Gd  &  293 & 2060 & 7.63 & hcp \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\subsection{Antiferromagnetic Order}
-% Experimental: Shull, Strauser, Wollan 1951 (1321 cit) -- MnO neutron diffraction
-% Data: magnetic Bragg peaks below Neel temperature
+The non-integer magnetic moments (2.22, 1.72, 0.60 $\mu_B$) cannot be explained by localized atomic moments and are evidence for itinerant (band) ferromagnetism in the 3$d$ metals.
+
+\subsection{Temperature Dependence of Magnetization}
+
+The spontaneous magnetization decreases smoothly from $M_s(0)$ at $T = 0$ to zero at $T_C$. Oliver and Sucksmith (1953) measured $M(T)$ curves for Ni alloys, comparing them with the molecular field (Brillouin function) prediction.
+
+At low temperatures, $M$ decreases as $T^{3/2}$ due to thermal excitation of spin waves (magnons):
+\begin{equation}
+  M(T) = M(0)\left[1 - \left(\frac{T}{T_0}\right)^{3/2}\right] \quad (\text{Bloch } T^{3/2} \text{ law})
+\end{equation}
+
+\section{Antiferromagnetic Order}
+
+\subsection{Neutron Diffraction Evidence}
+
+The definitive experimental proof of antiferromagnetic order came from Shull, Strauser, and Wollan (1951)~\cite{shull1951neutron}, who observed \textit{additional} Bragg peaks in the neutron diffraction pattern of MnO below \SI{120}{\kelvin} (the N\'eel temperature) that are absent in the X-ray pattern.
+
+These magnetic Bragg peaks arise because the antiferromagnetic unit cell is \textit{twice} the size of the chemical unit cell---neighboring Mn$^{2+}$ ions have opposite spin orientations. This experiment (1321 citations) is a cornerstone of condensed matter physics.
+
+\begin{table}[H]
+\centering
+\caption{N\'eel temperatures of selected antiferromagnets.}
+\label{tab:neel}
+\begin{tabular}{@{}lSl@{}}
+\toprule
+Material & {$T_N$ (\si{\kelvin})} & Structure \\
+\midrule
+MnO   & 116  & NaCl (AFM type II) \\
+MnF$_2$ & 67 & rutile \\
+FeO   & 198  & NaCl \\
+NiO   & 525  & NaCl \\
+CoO   & 291  & NaCl \\
+Cr    & 311  & bcc (spin density wave) \\
+$\alpha$-Fe$_2$O$_3$ & 953 & corundum \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Ferromagnetic Domains}
 
 \subsection{Domain Imaging}
-% Experimental: Puchy et al. 2016 -- Bitter + MFM + Kerr comparison on same sample
-% Experimental: Petford-Long 2001 -- domain imaging techniques review
 
-\subsection{Coercivity and Hysteresis}
-% Experimental: Fliegans 2019 -- Nd2Fe14B hysteresis loops, coercivity analysis
-% Data: B-H curves for hard and soft ferromagnets
+A ferromagnet in its demagnetized state consists of domains---regions of uniform magnetization separated by domain walls. Domains exist to minimize the magnetostatic energy.
 
-\section{Curie and N\'eel Temperatures}
-% Data: Tc/TN table for Fe, Co, Ni, Gd, MnO, NiO, etc.
+Experimental imaging techniques include:
+\begin{itemize}[nosep]
+  \item \textbf{Bitter decoration} (1931): colloidal magnetic particles accumulate at domain walls.
+  \item \textbf{Magneto-optical Kerr effect (MOKE)}: the polarization of reflected light rotates differently for domains with different magnetization directions.
+  \item \textbf{Magnetic force microscopy (MFM)}: a magnetized AFM tip maps the stray field above the surface.
+\end{itemize}
+
+Puchy et al.\ (2016) compared all three techniques (Bitter, MFM, Kerr) on the same grain-oriented silicon steel sample, providing a rare direct comparison of domain imaging methods.
+
+\subsection{Hysteresis}
+
+When a ferromagnet is subjected to a cyclic magnetic field, the magnetization traces a \textbf{hysteresis loop} characterized by the remanent magnetization $M_r$ and the coercive field $H_c$.
+
+\begin{table}[H]
+\centering
+\caption{Magnetic properties of selected hard and soft ferromagnets.}
+\label{tab:hysteresis}
+\begin{tabular}{@{}lSSl@{}}
+\toprule
+Material & {$B_r$ (\si{\tesla})} & {$H_c$ (\si{\kilo\ampere\per\metre})} & Type \\
+\midrule
+Fe (pure, annealed)     & 1.3 & 0.08  & very soft \\
+Fe--Si (grain-oriented) & 1.5 & 0.04  & soft \\
+Permalloy (Ni$_{80}$Fe$_{20}$) & 0.6 & 0.004 & very soft \\
+\midrule
+Alnico 5         & 1.27 & 50   & hard \\
+Nd$_2$Fe$_{14}$B & 1.28 & 880  & very hard \\
+SmCo$_5$         & 0.92 & 720  & very hard \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The coercive field spans 5 orders of magnitude: from \SI{4}{\ampere\per\metre} (Permalloy) to \SI{880}{\kilo\ampere\per\metre} (NdFeB). Soft magnets are used in transformer cores; hard magnets in permanent magnet motors.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The resonant absorption of electromagnetic radiation by magnetic moments---NMR, EPR, and FMR---is the subject of the next chapter.}

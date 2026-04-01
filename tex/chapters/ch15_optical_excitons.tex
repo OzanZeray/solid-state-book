@@ -1,20 +1,107 @@
 \chapter{Optical Processes and Excitons}
 
-\section{Optical Reflectance}
+The interaction of light with solids reveals the electronic structure through absorption, reflection, and emission spectra. This chapter presents experimental optical data, the Kramers--Kronig analysis, exciton spectroscopy, and Raman scattering.
+
+\section{Optical Reflectance and the Dielectric Function}
 
 \subsection{Kramers--Kronig Relations}
-% Experimental: Yang et al. 2019 (43 cit) -- optical constants of Si and Ge
-% Experimental: Kramer 1971 (78 cit) -- dielectric constant of amorphous Ge and Si
-% Data: epsilon1(omega) and epsilon2(omega) for Si and Ge
+
+The real and imaginary parts of the dielectric function $\varepsilon(\omega) = \varepsilon_1(\omega) + i\varepsilon_2(\omega)$ are not independent---they are connected by the Kramers--Kronig relations:
+\begin{equation}
+  \varepsilon_1(\omega) - 1 = \frac{2}{\pi}\mathcal{P}\int_0^\infty \frac{\omega'\varepsilon_2(\omega')}{\omega'^2 - \omega^2}d\omega'
+\end{equation}
+
+By measuring the reflectance $R(\omega)$ over a wide frequency range and applying Kramers--Kronig, both $\varepsilon_1$ and $\varepsilon_2$ can be extracted. Yang et al.\ (2019) determined the optical constants of Si and Ge from high-precision reflection EELS data:
+
+\begin{table}[H]
+\centering
+\caption{Optical constants of Si and Ge at selected photon energies. Data from Yang et al.\ (2019).}
+\label{tab:optical}
+\begin{tabular}{@{}lSSSS@{}}
+\toprule
+ & \multicolumn{2}{c}{Silicon} & \multicolumn{2}{c}{Germanium} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+$E$ (\si{\electronvolt}) & {$\varepsilon_1$} & {$\varepsilon_2$} & {$\varepsilon_1$} & {$\varepsilon_2$} \\
+\midrule
+1.0 & 12.0 &  0.0 & 21.6 & 2.8 \\
+2.0 & 15.3 &  0.3 & 30.4 & 11.2 \\
+3.0 & 17.4 & 10.8 & 12.5 & 18.0 \\
+4.0 & -4.8 & 27.1 & -4.8 & 12.6 \\
+5.0 & -7.6 &  7.0 & -6.5 &  8.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The sharp peak in $\varepsilon_2$ near \SI{4}{\electronvolt} in Si corresponds to interband transitions at the critical points $E_1$ and $E_2$ of the band structure. The sign change of $\varepsilon_1$ from positive to negative indicates the onset of metallic-like optical response.
+
 
 \section{Excitons}
 
-\subsection{Rydberg Excitons in Cu$_2$O}
-% Experimental: Kazimierczuk et al. 2014 (Nature, 519 cit) -- Rydberg series up to n=25!
-% Experimental: Gallagher et al. 2022 (40 cit) -- Rydberg exciton-microwave coupling
-% Data: exciton absorption spectrum, binding energies
+An exciton is a bound electron--hole pair, analogous to a hydrogen atom but embedded in the crystal. The binding energy is:
+\begin{equation}
+  E_n = -\frac{\mu^* e^4}{2\hbar^2\kappa^2 n^2} = -\frac{R_y^*}{n^2}
+\end{equation}
+where $\mu^*$ is the reduced effective mass, $\kappa$ is the dielectric constant, and $R_y^*$ is the effective Rydberg.
+
+\subsection{Giant Rydberg Excitons in Cu$_2$O}
+
+The copper oxide Cu$_2$O has been the model system for exciton spectroscopy since the 1950s. In a stunning experiment, Kazimierczuk et al.\ (2014)~\cite{kazimierczuk2014exciton} observed Rydberg excitons in Cu$_2$O up to the principal quantum number $n = 25$, published in \textit{Nature} (519 citations).
+
+The exciton series is directly analogous to the hydrogen atom Lyman series:
+\begin{equation}
+  E_n = E_g - \frac{R_y^*}{n^2}, \quad R_y^* = \SI{86}{\milli\electronvolt}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Rydberg exciton energies in Cu$_2$O. Data from Kazimierczuk et al.\ (2014).}
+\label{tab:exciton}
+\begin{tabular}{@{}SS@{}}
+\toprule
+{$n$} & {$E_n$ (\si{\electronvolt})} \\
+\midrule
+2  & 2.1333 \\
+3  & 2.1540 \\
+4  & 2.1601 \\
+5  & 2.1630 \\
+10 & 2.1656 \\
+15 & 2.1661 \\
+20 & 2.1663 \\
+25 & 2.1664 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The convergence to $E_g = \SI{2.1720}{\electronvolt}$ follows the $1/n^2$ hydrogen-like pattern precisely. The $n = 25$ exciton has a radius of $\sim$\SI{1}{\micro\metre}---a macroscopic quantum object!
+
 
 \section{Raman Effects in Crystals}
-% Experimental: Liu et al. 2000 (201 cit) -- diamond first-order Raman, T dependence
-% Experimental: Windl et al. 1993 (140 cit) -- diamond + Si second-order Raman
-% Data: Raman spectra with phonon peak positions
+
+In Raman scattering, a photon is inelastically scattered by creating (Stokes) or absorbing (anti-Stokes) a phonon:
+\begin{equation}
+  \omega_{\text{scattered}} = \omega_{\text{incident}} \pm \omega_{\text{phonon}}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{First-order Raman frequencies of selected crystals at room temperature.}
+\label{tab:raman}
+\begin{tabular}{@{}lSl@{}}
+\toprule
+Crystal & {Raman shift (\si{\per\centi\metre})} & Phonon mode \\
+\midrule
+Diamond & 1332 & zone-center optical phonon \\
+Si      &  521 & zone-center optical phonon \\
+Ge      &  301 & zone-center optical phonon \\
+GaAs    &  292 & TO phonon \\
+GaAs    &  269 & LO phonon \\
+CaF$_2$ &  322 & $T_{2g}$ mode \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Liu et al.\ (2000) measured the temperature dependence of the diamond Raman line from \SI{300}{\kelvin} to \SI{1850}{\kelvin}, observing a shift from \SI{1332}{\per\centi\metre} to \SI{1316}{\per\centi\metre} and a broadening from \SI{1.7}{\per\centi\metre} to \SI{20}{\per\centi\metre}. This temperature dependence arises from anharmonic phonon--phonon coupling.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The dielectric and ferroelectric properties of insulating crystals are the subject of the next chapter.}

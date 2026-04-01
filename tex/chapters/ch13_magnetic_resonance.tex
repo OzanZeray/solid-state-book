@@ -1,22 +1,79 @@
 \chapter{Magnetic Resonance}
 
+Magnetic resonance techniques exploit the interaction of electromagnetic radiation with magnetic moments in solids. Nuclear magnetic resonance (NMR), electron paramagnetic resonance (EPR), and ferromagnetic resonance (FMR) provide detailed information about local electronic structure, bonding, and magnetic order.
+
 \section{Nuclear Magnetic Resonance}
-% Experimental: Giunta et al. 2020 (50 cit) -- NMR discovery history (Purcell/Bloch 1946)
-% Nobel Prize 1952
+
+In 1946, Edward Purcell at Harvard and Felix Bloch at Stanford independently detected NMR signals from bulk matter---Purcell from paraffin wax, Bloch from water. They shared the 1952 Nobel Prize.
+
+A nucleus with spin $I$ in a magnetic field $B_0$ has $2I+1$ energy levels separated by $\Delta E = \gamma\hbar B_0$, where $\gamma$ is the gyromagnetic ratio. Resonant absorption occurs at the \textbf{Larmor frequency}:
+\begin{equation}
+  \omega_0 = \gamma B_0
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{NMR properties of common nuclei.}
+\label{tab:nmr_nuclei}
+\begin{tabular}{@{}lSSSS@{}}
+\toprule
+Nucleus & {$I$} & {$\gamma/2\pi$ (\si{\mega\hertz\per\tesla})} & {Natural abundance (\%)} & {Sensitivity} \\
+\midrule
+$^1$H  & 1/2 & 42.58  & 99.99 & 1.000 \\
+$^{13}$C & 1/2 & 10.71 & 1.11  & 0.016 \\
+$^{19}$F & 1/2 & 40.08 & 100   & 0.833 \\
+$^{27}$Al & 5/2 & 11.09 & 100  & 0.207 \\
+$^{29}$Si & 1/2 & 8.47 & 4.70  & 0.008 \\
+$^{63}$Cu & 3/2 & 11.29 & 69.1 & 0.093 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Knight Shift}
-% Experimental: Alloul 2015 -- Knight shift review, NMR in metals
-% Data: Knight shift values for metals
+
+In metals, the NMR resonance frequency is shifted from the free-nucleus value by the \textbf{Knight shift} $K$, arising from the contact interaction between the nuclear spin and the spin density of conduction electrons at the nucleus:
+\begin{equation}
+  K = \frac{\Delta\omega}{\omega_0} = \frac{8\pi}{3}\chi_{\text{Pauli}} |\psi(0)|^2
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Knight shift $K$ (\%) for selected metals.}
+\label{tab:knight}
+\begin{tabular}{@{}lSlS@{}}
+\toprule
+Metal & {$K$ (\%)} & Metal & {$K$ (\%)} \\
+\midrule
+Li & 0.026 & Cu & 0.237 \\
+Na & 0.112 & Al & 0.162 \\
+K  & 0.265 & Pt & 2.90 \\
+Rb & 0.653 & Sn & 0.73 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Knight shift increases with $\chi_{\text{Pauli}}$ and the $s$-electron density at the nucleus, providing a local probe of the conduction electron wavefunction.
 
 \section{Electron Paramagnetic Resonance}
 
+EPR (also called ESR) detects unpaired electron spins. The resonance condition is:
+\begin{equation}
+  h\nu = g\mu_B B_0
+\end{equation}
+
 \subsection{F Centers in Alkali Halides}
-% Experimental: Holton et al. 1962 (211 cit) -- F-center EPR in KCl
-% Experimental: Georgiev 1988 (38 cit) -- F' center ESR review
-% Data: EPR spectra, g-factors
+
+Holton et al.\ (1962) measured the EPR spectra of F centers (electrons trapped at anion vacancies) in KCl. The F center is a single electron in a roughly spherical potential well formed by the surrounding cations. The EPR spectrum shows:
+\begin{itemize}[nosep]
+  \item A single resonance line near $g = 2.001$ (close to the free electron value).
+  \item Hyperfine structure from the interaction with neighboring nuclear spins.
+  \item Line broadening due to spin--spin interactions between F centers.
+\end{itemize}
 
 \section{Ferromagnetic Resonance}
-% Shape effects, spin wave resonance
 
-\section{Antiferromagnetic Resonance}
-% Resonance frequencies
+In ferromagnetic resonance, the entire magnetization of a sample precesses coherently around the applied field. The resonance frequency depends on the sample shape (demagnetization factors) and the magnetocrystalline anisotropy.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{We now turn to the collective excitations of the electron gas---plasmons---and the coupling of light with lattice vibrations---polaritons.}

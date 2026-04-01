@@ -1,22 +1,82 @@
 \chapter{Plasmons, Polaritons, and Polarons}
 
+This chapter treats three types of collective excitations that involve the coupling of electromagnetic fields with charged particles in solids: plasmons (oscillations of the electron gas), polaritons (coupling of photons with optical phonons), and polarons (electrons dressed by a cloud of phonons).
+
 \section{Dielectric Function of the Electron Gas}
-% Plasma optics, dispersion relation
 
-\section{Plasmons}
+The free electron gas has a frequency-dependent dielectric function:
+\begin{equation}
+  \varepsilon(\omega) = 1 - \frac{\omega_p^2}{\omega^2}
+\end{equation}
+where the \textbf{plasma frequency} is:
+\begin{equation}
+  \omega_p = \sqrt{\frac{ne^2}{m\varepsilon_0}}
+\end{equation}
 
-\subsection{Electron Energy Loss Spectroscopy}
-% Experimental: Wu et al. 2017 (212 cit) -- EELS plasmon review, Al bulk plasmon
-% Experimental: Cherqui et al. 2016 (106 cit) -- EELS theory and experiments
-% Data: EELS spectrum of Al showing plasmon loss peaks
+\begin{table}[H]
+\centering
+\caption{Plasma frequencies and corresponding wavelengths for free-electron metals.}
+\label{tab:plasma}
+\begin{tabular}{@{}lSSS@{}}
+\toprule
+Metal & {$n$ ($10^{28}$ \si{\per\metre\cubed})} & {$\hbar\omega_p$ (\si{\electronvolt})} & {$\lambda_p$ (\si{\nano\metre})} \\
+\midrule
+Li & 4.70 & 8.0  & 155 \\
+Na & 2.65 & 5.9  & 210 \\
+K  & 1.40 & 4.3  & 290 \\
+Al & 18.1 & 15.8 & 79 \\
+Cu & 8.47 & 10.8 & 115 \\
+Ag & 5.86 & 9.0  & 138 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{UV Transparency of Metals}
+
+For $\omega > \omega_p$, $\varepsilon > 0$ and electromagnetic waves propagate---the metal becomes transparent. The alkali metals are transparent in the ultraviolet, with measured transparency edges in good agreement with the free-electron $\omega_p$. Sodium becomes transparent at $\lambda \approx \SI{210}{\nano\metre}$, potassium at $\lambda \approx \SI{315}{\nano\metre}$.
+
+\subsection{Plasmons: Electron Energy Loss Spectroscopy}
+
+Plasmons are quantized plasma oscillations with energy $\hbar\omega_p$. They are directly observed in \textbf{electron energy loss spectroscopy (EELS)}: a beam of fast electrons passing through a thin metal film loses energy in discrete multiples of $\hbar\omega_p$.
+
+Wu et al.\ (2017) reviewed EELS measurements, noting that the bulk plasmon of aluminum at $\hbar\omega_p \approx \SI{15}{\electronvolt}$ was first observed by Ruthemann in 1948. Modern EELS with sub-\si{\electronvolt} resolution can map plasmon modes with nanometer spatial resolution.
+
 
 \section{Polaritons}
 
-\subsection{Phonon-Polariton Dispersion}
-% Experimental: Meskers 2018 -- polariton dispersion in ionic crystals
-% Experimental: Zhang et al. 2004 (50 cit) -- phonon-polariton in piezoelectric superlattice
-% LST relation
+When infrared light propagates through an ionic crystal near a transverse optical (TO) phonon frequency, the photon and phonon couple to form a mixed mode called a \textbf{polariton}. The dielectric function near the TO phonon is:
+\begin{equation}
+  \varepsilon(\omega) = \varepsilon_\infty \frac{\omega^2 - \omega_{LO}^2}{\omega^2 - \omega_{TO}^2}
+\end{equation}
 
-\section{Electron-Phonon Interaction: Polarons}
-% Polaron effective mass
-% Peierls instability
+This gives a frequency range $\omega_{TO} < \omega < \omega_{LO}$ where $\varepsilon < 0$ and light cannot propagate---the \textbf{Reststrahlen band}. The ratio of LO to TO frequencies is given by the \textbf{Lyddane--Sachs--Teller relation}:
+\begin{equation}
+  \frac{\omega_{LO}^2}{\omega_{TO}^2} = \frac{\varepsilon_0}{\varepsilon_\infty}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{TO and LO phonon frequencies and dielectric constants for ionic crystals, verifying the LST relation.}
+\label{tab:lst}
+\begin{tabular}{@{}lSSSSS@{}}
+\toprule
+Crystal & {$\omega_{TO}$ (\si{\tera\hertz})} & {$\omega_{LO}$ (\si{\tera\hertz})} & {$\varepsilon_0$} & {$\varepsilon_\infty$} & {$\varepsilon_0/\varepsilon_\infty$ (calc)} \\
+\midrule
+NaCl  & 4.92 & 7.91 & 5.90 & 2.25 & 2.59 \\
+KBr   & 3.39 & 5.07 & 4.90 & 2.33 & 2.24 \\
+GaAs  & 8.06 & 8.76 & 12.9 & 10.9 & 1.18 \\
+MgO   & 12.1 & 21.5 & 9.83 & 2.95 & 3.16 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Polarons}
+
+When an electron moves through an ionic crystal, it polarizes the surrounding lattice, creating a potential well that follows the electron. The electron plus its polarization cloud is called a \textbf{polaron}. The polaron has an enhanced effective mass $m^*_{\text{pol}} > m^*_{\text{band}}$ and a reduced mobility.
+
+The electron--phonon coupling strength is characterized by the Fr\"ohlich coupling constant $\alpha$. For weak coupling ($\alpha < 1$), the mass enhancement is $m^*_{\text{pol}}/m^* \approx 1 + \alpha/6$. For strong coupling ($\alpha > 6$), the polaron becomes self-trapped.
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+\textit{The optical processes of interband transitions, excitons, and Raman scattering are presented in the next chapter.}
