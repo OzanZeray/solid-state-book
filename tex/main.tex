@@ -1,0 +1,188 @@
+\documentclass[12pt, oneside]{book}
+
+% ─── Encoding & Language ───
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% ─── Page Layout ───
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% ─── Dark Mode ───
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+
+% ─── Mathematics ───
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% ─── Units & Numbers ───
+\usepackage{siunitx}
+\sisetup{
+  per-mode=symbol,
+  detect-all
+}
+
+% ─── Tables ───
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+% ─── Figures & Plots ───
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ─── Bibliography ───
+\usepackage[
+  backend=biber,
+  style=numeric-comp,
+  sorting=none,
+  maxbibnames=3
+]{biblatex}
+\addbibresource{references.bib}
+
+% ─── Hyperlinks ───
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=cyan,
+  citecolor=yellow,
+  urlcolor=green,
+  pdfauthor={Ozan Zeray},
+  pdftitle={Experimental Data for Introductory Solid State Physics}
+}
+
+% ─── Misc ───
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+% ═══════════════════════════════════════
+% DOCUMENT
+% ═══════════════════════════════════════
+\begin{document}
+
+% ─── TITLE PAGE ───
+\begin{titlepage}
+  \centering
+  \vspace*{4cm}
+  {\Huge\bfseries Experimental Data for\\[0.3cm]
+   Introductory Solid State Physics \par}
+  \vspace{2cm}
+  {\Large Ozan Zeray\par}
+  \vfill
+  {\large\itshape A companion to the topics of introductory solid state physics,\\
+  presenting the real experimental data behind the theory.\par}
+  \vfill
+\end{titlepage}
+
+% ─── ABOUT ───
+\chapter*{About This Book}
+\addcontentsline{toc}{chapter}{About This Book}
+
+I am writing this book to provide experimental demonstrations and
+data for better understanding of introductory solid state physics subjects.
+
+In my experience, I have found this to be completely omitted by theoretical
+considerations and arguments. Thus here I gathered the very real experimental
+data straight from the very real life which shows very real physics effects and responses
+to various experimentation. This book will be furthermore an aid for the curious who craves
+the very real phenomena rather than diagrams, graphs or other absurdly strange ways of
+obstructing the very real results into something completely irrelevant for the sake of
+`simplification' or `education'.
+
+When I heard about the subject `Solid State Physics' in highschool, I couldn't think of any other
+study which could be less boring than this. My very first instinct was to think about solids
+and anything interesting about them. However I could only think of stones, pebbles, rocks, wood,
+iron, hard plastic and other common items. It was my problem to not have solids of dozens of different
+elements in the periodic table at my disposal and not have conducted various electrical, thermodynamics or optics
+experiments with them. Therefore to attract your attention to this matter, I have here
+gathered the data and experiments which scientists worked on through the years that show
+very curious patterns and indicate towards greater rules of the constitution of the universe.
+It is my pleasure to present you this accumulated data on behaviours of solids.
+
+\chapter*{}
+\begin{quote}
+\textit{``Ben manev\^{i} miras olarak hi\c{c}bir nas-{\i} kat{\i}, hi\c{c}bir dogma, hi\c{c}bir donmu\c{s}, kal{\i}pla\c{s}m{\i}\c{s} kural b{\i}rakm{\i}yorum. Benim manev\^{i} mirasim bilim ve ak{\i}ld{\i}r. Benden sonra, beni benimsemek isteyenler, bu temel mihver \"uzerinde akl{\i}n ve bilimin rehberli\u{g}ini kabul ederlerse, manev\^{i} miras\c{c}{\i}lar{\i}m olurlar.''}
+\\[0.5cm]
+\textit{1881\,--\,$\infty$}
+\end{quote}
+
+% ─── TABLE OF CONTENTS ───
+\tableofcontents
+\cleardoublepage
+
+% ═══════════════════════════════════════
+% PART I: CRYSTAL STRUCTURE & BINDING
+% ═══════════════════════════════════════
+\part{Crystal Structure, Diffraction, and Binding}
+
+\include{chapters/ch01_crystal_structure}
+\include{chapters/ch02_wave_diffraction}
+\include{chapters/ch03_crystal_binding}
+
+% ═══════════════════════════════════════
+% PART II: LATTICE DYNAMICS
+% ═══════════════════════════════════════
+\part{Lattice Dynamics and Thermal Properties}
+
+\include{chapters/ch04_phonons_vibrations}
+\include{chapters/ch05_phonons_thermal}
+
+% ═══════════════════════════════════════
+% PART III: ELECTRONS IN SOLIDS
+% ═══════════════════════════════════════
+\part{Electrons in Solids}
+
+\include{chapters/ch06_free_electron}
+\include{chapters/ch07_energy_bands}
+\include{chapters/ch08_semiconductors}
+\include{chapters/ch09_fermi_surfaces}
+
+% ═══════════════════════════════════════
+% PART IV: SUPERCONDUCTIVITY
+% ═══════════════════════════════════════
+\part{Superconductivity}
+
+\include{chapters/ch10_superconductivity}
+
+% ═══════════════════════════════════════
+% PART V: MAGNETISM & RESONANCE
+% ═══════════════════════════════════════
+\part{Magnetism and Magnetic Resonance}
+
+\include{chapters/ch11_dia_paramagnetism}
+\include{chapters/ch12_ferro_antiferromagnetism}
+\include{chapters/ch13_magnetic_resonance}
+
+% ═══════════════════════════════════════
+% PART VI: OPTICAL & DIELECTRIC PROPERTIES
+% ═══════════════════════════════════════
+\part{Optical and Dielectric Properties}
+
+\include{chapters/ch14_plasmons_polaritons}
+\include{chapters/ch15_optical_excitons}
+\include{chapters/ch16_dielectrics_ferroelectrics}
+
+% ═══════════════════════════════════════
+% PART VII: SURFACES, NANOSTRUCTURES & DEFECTS
+% ═══════════════════════════════════════
+\part{Surfaces, Nanostructures, and Defects}
+
+\include{chapters/ch17_surfaces_interfaces}
+\include{chapters/ch18_nanostructures}
+\include{chapters/ch19_noncrystalline}
+\include{chapters/ch20_point_defects}
+\include{chapters/ch21_dislocations}
+\include{chapters/ch22_alloys}
+
+% ─── BIBLIOGRAPHY ───
+\printbibliography[heading=bibintoc, title={References}]
+
+\end{document}
