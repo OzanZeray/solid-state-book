@@ -10,6 +10,12 @@
     "arxiv-latex-mcp": {
       "command": "C:\\Users\\Ozan\\AppData\\Roaming\\Python\\Python314\\Scripts\\arxiv-latex-mcp.exe",
       "args": []
+    },
+    "scihub": {
+      "command": "C:\\Python314\\python.exe",
+      "args": [
+        "C:\\Users\\Ozan\\Desktop\\PROJECTS\\Sci-Hub-MCP-Server\\sci_hub_server.py"
+      ]
     }
   }
 }
